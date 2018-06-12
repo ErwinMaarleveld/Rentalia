@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace Rentalia
 {
-	public partial class MainPage : ContentPage
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class RegisterPage : ContentPage
 	{
-		public MainPage()
+		public RegisterPage ()
 		{
-			InitializeComponent();
-        }
+			InitializeComponent ();
+		}
 
-
-
-        public void OnClickRegister(object sender, EventArgs e)
+        public void OnClickLogin(object sender, EventArgs e)
         {
-            App.Current.MainPage = new RegisterPage();
+            App.Current.MainPage = new MainPage();
         }
 
         public void OnClickHub(object sender, EventArgs e)

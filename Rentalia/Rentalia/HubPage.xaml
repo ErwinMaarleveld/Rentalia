@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Rentalia.HubPage"
+             BackgroundImage="background2.jpg">
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions Grid.Row="0">
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!--message icon-->
+            <Image Source="mailIcon.png" TranslationX="10" WidthRequest="40" HeightRequest="40" TranslationY="3" Grid.Row="0" Grid.Column="0" />
+            
+            <!--offerlist icon-->
+            <Image Source="listIcon.png" WidthRequest="40" HeightRequest="40" TranslationX="5" TranslationY="3" Grid.Row="0" Grid.Column="1"/>
+            
+            <!--profile icon-->
+            <Image Source="userIcon.png" WidthRequest="40" HeightRequest="40" TranslationY="3" Grid.Row="0"  Grid.Column="2" />
+            
+            <!--log out icon-->
+            <Image Source="logOutIcon.png" TranslationX="-5" WidthRequest="40" HeightRequest="40" TranslationY="3" Grid.Row="0"  Grid.Column="3" />
+
+            <!--Current offers-->
+            <Frame BorderColor="Black" BackgroundColor="Transparent" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" TranslationX="10" TranslationY="15" HeightRequest="260" WidthRequest="195" Grid.Row="1" Grid.ColumnSpan="4">
+                
+            </Frame>
+
+
+
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

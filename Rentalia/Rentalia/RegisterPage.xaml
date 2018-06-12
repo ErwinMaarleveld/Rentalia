@@ -1,38 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Rentalia"
-             x:Class="Rentalia.MainPage"
+             x:Class="Rentalia.RegisterPage"
              BackgroundImage="background2.jpg">
-
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center"
                      HorizontalOptions="Center">
 
-            <Entry FontSize="Small"
-                   Placeholder="Username"
+            <Entry Placeholder="E-mail"
+                   FontSize="Small"
                    PlaceholderColor="Black"
-                   TextColor="Black"
+                   BackgroundColor="OrangeRed"/>
+            <Entry Placeholder="Username"
+                   FontSize="Small"
+                   PlaceholderColor="Black"
                    BackgroundColor="OrangeRed"/>
             <Entry IsPassword="True"
                    FontSize="Small"
                    Placeholder="Password"
                    PlaceholderColor="Black"
-                   BackgroundColor="OrangeRed" />
-            <Button Text="Sign-in"
+                   BackgroundColor="OrangeRed"/>
+            <Entry IsPassword="True"
                    FontSize="Small"
-                    Clicked="OnClickHub"
+                   Placeholder="Retype Password"
+                   PlaceholderColor="Black"
+                   BackgroundColor="OrangeRed"/>
+            <Button Text="Register"
+                    FontSize="Small"
                     BackgroundColor="OrangeRed"
                     BorderColor="Black"
-                    BorderWidth="1"/>
-            <Button Text="Sign-up"
-                    Clicked="OnClickRegister"
+                    BorderWidth="1"
+                    Clicked="OnClickHub"/>
+            <Button Text="I'm already member"
+                    FontSize="Small"
                     BackgroundColor="OrangeRed"
                     BorderColor="Black"
-                    BorderWidth="1"/>
+                    BorderWidth="1"
+                    Clicked="OnClickLogin"/>
 
         </StackLayout>
 
     </ContentPage.Content>
-
 </ContentPage>
