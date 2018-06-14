@@ -39,6 +39,7 @@ namespace Rentalia
             {
                 DateTime now = DateTime.Now;
                 Gebruiker nieuweGebruiker = new Gebruiker("420691337yoMum", voornaam, tussen, achternaam, email, now, 0, 0);
+                App.Current.MainPage = new HubPage();
                 return nieuweGebruiker;
             }
             else
