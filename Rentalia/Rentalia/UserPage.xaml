@@ -1,45 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Rentalia.UserPage">
+             x:Class="Rentalia.UserPage"
+             BackgroundImage="background2.jpg">
     <ContentPage.Content>
         <StackLayout>
             <Grid RowSpacing="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="75"/>
-                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="65" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <!--colorful grid-->
-                <BoxView BackgroundColor="Yellow" Grid.Row="0"/>
-                <BoxView BackgroundColor="Red" Grid.Row="1" HeightRequest="100"/>
+
+                <Grid.ColumnDefinitions Grid.Row="0">
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
                 <!--message icon-->
-                <BoxView BackgroundColor="Gray" HorizontalOptions="Start" TranslationX="15" WidthRequest="50" HeightRequest="50" VerticalOptions="Start" TranslationY="15"/>
-                <!--menu icon-->
-                <BoxView BackgroundColor="Gray" HorizontalOptions="Start" TranslationX="80" WidthRequest="50" HeightRequest="50" VerticalOptions="Start" TranslationY="15"/>
+                <Image Source="mailIcon.png" TranslationX="10" WidthRequest="40" HeightRequest="40" TranslationY="3" Grid.Row="0" Grid.Column="0" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnClickMailBox" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <!--offerlist icon-->
+                <Image Source="listIcon.png" WidthRequest="40" HeightRequest="40" TranslationX="5" TranslationY="3" Grid.Row="0" Grid.Column="1">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCLickOfferPage" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+
                 <!--profile icon-->
-                <BoxView BackgroundColor="Gray" HorizontalOptions="Start" TranslationX="145" WidthRequest="50" HeightRequest="50" VerticalOptions="Start" TranslationY="15"/>
+                <Image Source="userIcon.png" WidthRequest="40" HeightRequest="40" TranslationY="3" Grid.Row="0"  Grid.Column="2" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCLickUserPage" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+
                 <!--home icon-->
-                <BoxView BackgroundColor="Gray" HorizontalOptions="End" TranslationX="-15" WidthRequest="50" HeightRequest="50" VerticalOptions="Start" TranslationY="15"/>
+                <Image Source="homeIcon.png" TranslationX="-5" WidthRequest="40" HeightRequest="40" TranslationY="3" Grid.Row="0"  Grid.Column="3">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCLickHubPage" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
 
-                <!--searchbar-->
-                <Entry x:Name="SearchBar" Text="Search" FontSize="Small" Placeholder="Search" TextColor="Black" BackgroundColor="LightGray" HorizontalOptions="End" TranslationX="-80" VerticalOptions="Start" TranslationY="25" HeightRequest="35" WidthRequest="85"/>
-
-                <!--add offers-->
-                <BoxView BackgroundColor="Gray" HorizontalOptions="Start" TranslationX="15" WidthRequest="100" HeightRequest="35" VerticalOptions="Start" TranslationY="180"/>
-
-                <!--profile name-->
-                <BoxView BackgroundColor="Aquamarine" HorizontalOptions="Start" TranslationX="105" WidthRequest="150" HeightRequest="15" VerticalOptions="Start" TranslationY="85"/>
-
-                <!--profile rating-->
-                <BoxView BackgroundColor="Pink" HorizontalOptions="Center" TranslationX="45" WidthRequest="150" HeightRequest="45" VerticalOptions="Start" TranslationY="175"/>
-
-                <!--profile description-->
-                <BoxView BackgroundColor="Purple" HorizontalOptions="Center" TranslationX="45" WidthRequest="150" HeightRequest="45" VerticalOptions="Start" TranslationY="110"/>
-
-                <!--profile image-->
-                <BoxView BackgroundColor="White" HorizontalOptions="Start" TranslationX="15" WidthRequest="80" HeightRequest="80" VerticalOptions="Start" TranslationY="85"/>
-                <Image Source="icon.jpg" Aspect="AspectFill" HorizontalOptions="Start" TranslationX="15" WidthRequest="80" HeightRequest="80" VerticalOptions="Start" TranslationY="85"/>
             </Grid>
         </StackLayout>
 

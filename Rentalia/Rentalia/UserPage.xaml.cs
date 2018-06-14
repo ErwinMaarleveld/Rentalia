@@ -16,5 +16,26 @@ namespace Rentalia
 		{
 			InitializeComponent ();
 		}
-	}
+
+        public void OnClickMailBox(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new MainPage();
+        }
+
+        public void OnCLickUserPage(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new UserPage();
+        }
+
+        public void OnCLickHubPage(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new HubPage();
+        }
+
+        public void OnCLickOfferPage(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new OfferPage();
+        }
+
+    }
 }

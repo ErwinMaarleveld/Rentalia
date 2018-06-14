@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Rentalia.HubPage"
+             x:Class="Rentalia.OfferPage"
              BackgroundImage="background2.jpg"
-             Title="HubPage">
+             Title="OfferPage">
     <ContentPage.Content>
         <Grid RowSpacing="0">
             <Grid.RowDefinitions>
@@ -18,42 +18,48 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            
+            <ListView x:Name="ListOfPages" ItemSelected="ListOfPages_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Title}" TextColor="Black" FontSize="Small" BackgroundColor="White" HorizontalOptions="End" TranslationX="-80" VerticalOptions="Start" TranslationY="25" HeightRequest="35" WidthRequest="85"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
             <!--message icon-->
             <Image Source="mailIcon.png" TranslationX="10" WidthRequest="40" HeightRequest="40" TranslationY="3" Grid.Row="0" Grid.Column="0" >
-                <Image.GestureRecognizers>
+                <!--<Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnClickMailBox" NumberOfTapsRequired="1" />
-                </Image.GestureRecognizers>
+                </Image.GestureRecognizers>-->
             </Image>
 
             <!--offerlist icon-->
             <Image Source="listIcon.png" WidthRequest="40" HeightRequest="40" TranslationX="5" TranslationY="3" Grid.Row="0" Grid.Column="1">
-                <Image.GestureRecognizers>
+                <!--<Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnCLickOfferPage" NumberOfTapsRequired="1" />
-                </Image.GestureRecognizers>
+                </Image.GestureRecognizers>-->
             </Image>
 
             <!--profile icon-->
             <Image Source="userIcon.png" WidthRequest="40" HeightRequest="40" TranslationY="3" Grid.Row="0"  Grid.Column="2" >
-                <Image.GestureRecognizers>
+                <!--<Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnCLickUserPage" NumberOfTapsRequired="1" />
-                </Image.GestureRecognizers>
+                </Image.GestureRecognizers>-->
             </Image>
 
             <!--log out icon-->
             <Image Source="logOutIcon.png" TranslationX="-5" WidthRequest="40" HeightRequest="40" TranslationY="3" Grid.Row="0"  Grid.Column="3">
-                <Image.GestureRecognizers>
+                <!--<Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnCLickLogOut" NumberOfTapsRequired="1" />
-                </Image.GestureRecognizers>
+                </Image.GestureRecognizers>-->
             </Image>
 
             <!--Current offers-->
             <Frame BorderColor="Black" BackgroundColor="Transparent" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" TranslationX="10" TranslationY="15" HeightRequest="260" WidthRequest="195" Grid.Row="1" Grid.ColumnSpan="4">
-                
+
             </Frame>
-            
-            
+
+
 
 
 
