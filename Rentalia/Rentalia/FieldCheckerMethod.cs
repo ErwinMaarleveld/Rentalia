@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using static Rentalia.Data.Gebruiker;
-using static Rentalia.Data.Aanbieding;
-using static Rentalia.Data.Bericht;
-using static Rentalia.Data.Boeking;
-using static Rentalia.Data.Foto;
+using Rentalia.Data;
 
 namespace Rentalia
 {
@@ -23,9 +19,14 @@ namespace Rentalia
             }
         }
 
-        public Gebruiker addGebruiker(string voornaam, string tussen, string achternaam, string email)
+        public Gebruiker AddGebruiker(string voornaam, string tussen, string achternaam, string email)
         {
-            return new Gebruiker();
+            if IsFilled() && IsFlled() && IsFlled()
+            {
+                DateTime now = DateTime.Now;
+                Gebruiker nieuweGebruiker = new Gebruiker(gcodeMETHode, voornaam, tussen, achternaam, email, now, 0, 0);
+                return nieuweGebruiker;
+            }
         }
     }
 }
