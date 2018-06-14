@@ -26,7 +26,15 @@ namespace Rentalia
         {
             var a = new FieldCheckerMethod();
             a.AddGebruiker(voornaam.ToString(), tussen.ToString(), achternaam.ToString(), email.ToString(), pass1.ToString(), pass2.ToString());
-            
+
+            if (a.IsFilled(email.ToString()) && a.IsFilled(voornaam.ToString()) && a.IsFilled(achternaam.ToString()) && a.IsFilled(pass1.ToString()) && a.PassEqual(pass1.ToString(), pass2.ToString()))
+            {
+                App.Current.MainPage = new HubPage();
+            }
+            else
+            {
+                DisplayAlert("Alert", "Je hebt niet alle verplichte velden ingevuld!", "Oke");
+            }
         }
 
     }

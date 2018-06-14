@@ -39,12 +39,12 @@ namespace Rentalia
             {
                 DateTime now = DateTime.Now;
                 Gebruiker nieuweGebruiker = new Gebruiker("420691337yoMum", voornaam, tussen, achternaam, email, now, 0, 0);
-                App.Current.MainPage = new HubPage();
+                
                 return nieuweGebruiker;
             }
             else
             {
-                DisplayAlert("Alert", "Je hebt niet alle verplichte invulvelden ingevuld!", "Oke");
+                DisplayAlert("Alert", "Je hebt niet alle verplichte velden ingevuld!", "Oke");
                 return null;
             }
         }
