@@ -10,7 +10,7 @@
                      HorizontalOptions="Center">
 
             <Entry FontSize="Small"
-                   Placeholder="Username"
+                   Placeholder="E-mail"
                    PlaceholderColor="Black"
                    TextColor="Black"
                    BackgroundColor="OrangeRed"/>
