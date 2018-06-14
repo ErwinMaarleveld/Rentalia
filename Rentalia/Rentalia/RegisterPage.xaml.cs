@@ -24,7 +24,8 @@ namespace Rentalia
 
         public void OnClickHub(object sender, EventArgs e)
         {
-            Gebruiker FieldCheckerMethod.AddGebruiker(voornaam.ToString(), tussen.ToString(), achternaam.ToString(), email.ToString(), pass1.ToString(), pass2.ToString());
+            var a = new FieldCheckerMethod();
+            a.AddGebruiker(voornaam.ToString(), tussen.ToString(), achternaam.ToString(), email.ToString(), pass1.ToString(), pass2.ToString());
             App.Current.MainPage = new HubPage();
         }
 
