@@ -4,53 +4,57 @@
              x:Class="Rentalia.RegisterPage"
              BackgroundImage="background2.jpg">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center"
-                     HorizontalOptions="Center">
+        <ScrollView Orientation='Vertical'>
 
-            <Entry Placeholder="E-mail"
-                   FontSize="Small"
-                   PlaceholderColor="Black"
-                   BackgroundColor="OrangeRed"/>
-            <Entry Placeholder="Username"
-                   FontSize="Small"
-                   PlaceholderColor="Black"
-                   BackgroundColor="OrangeRed"/>
-            <Entry IsPassword="True"
-                   FontSize="Small"
-                   Placeholder="Password"
-                   PlaceholderColor="Black"
-                   BackgroundColor="OrangeRed"/>
-            <Entry IsPassword="True"
-                   FontSize="Small"
-                   Placeholder="Retype Password"
-                   PlaceholderColor="Black"
-                   BackgroundColor="OrangeRed"/>
-            <Entry Placeholder="Voornaam"
-                   FontSize="Small"
-                   PlaceholderColor="Black"
-                   BackgroundColor="OrangeRed"/>
-            <Entry Placeholder="Tussenvoegsel"
-                   FontSize="Small"
-                   PlaceholderColor="Black"
-                   BackgroundColor="OrangeRed"/>
-            <Entry Placeholder="Achternaam"
-                   FontSize="Small"
-                   PlaceholderColor="Black"
-                   BackgroundColor="OrangeRed"/>
-            <Button Text="Register"
-                    FontSize="Small"
-                    BackgroundColor="OrangeRed"
-                    BorderColor="Black"
-                    BorderWidth="1"
-                    Clicked="OnClickHub"/>
-            <Button Text="I'm already member"
-                    FontSize="Small"
-                    BackgroundColor="OrangeRed"
-                    BorderColor="Black"
-                    BorderWidth="1"
-                    Clicked="OnClickLogin"/>
+            <StackLayout VerticalOptions="Center"
+                                 HorizontalOptions="Center">
 
-        </StackLayout>
+
+                <Entry Placeholder="E-mail"
+                               FontSize="Small"
+                               PlaceholderColor="Black"
+                               BackgroundColor="OrangeRed"/>
+                <Entry Placeholder="Username"
+                               FontSize="Small"
+                               PlaceholderColor="Black"
+                               BackgroundColor="OrangeRed"/>
+                <Entry IsPassword="True"
+                               FontSize="Small"
+                               Placeholder="Password"
+                               PlaceholderColor="Black"
+                               BackgroundColor="OrangeRed"/>
+                <Entry IsPassword="True"
+                               FontSize="Small"
+                               Placeholder="Retype Password"
+                               PlaceholderColor="Black"
+                               BackgroundColor="OrangeRed"/>
+                <Entry Placeholder="Voornaam"
+                               FontSize="Small"
+                               PlaceholderColor="Black"
+                               BackgroundColor="OrangeRed"/>
+                <Entry Placeholder="Tussenvoegsel"
+                               FontSize="Small"
+                               PlaceholderColor="Black"
+                               BackgroundColor="OrangeRed"/>
+                <Entry Placeholder="Achternaam"
+                               FontSize="Small"
+                               PlaceholderColor="Black"
+                               BackgroundColor="OrangeRed"/>
+                <Button Text="Register"
+                                FontSize="Small"
+                                BackgroundColor="OrangeRed"
+                                BorderColor="Black"
+                                BorderWidth="1"
+                                Clicked="OnClickHub"/>
+                <Button Text="I'm already member"
+                                FontSize="Small"
+                                BackgroundColor="OrangeRed"
+                                BorderColor="Black"
+                                BorderWidth="1"
+                                Clicked="OnClickLogin"/>
+
+            </StackLayout>
+        </ScrollView>
 
     </ContentPage.Content>
 </ContentPage>
