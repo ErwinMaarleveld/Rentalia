@@ -11,7 +11,7 @@ namespace Rentalia
     {
         public bool IsFilled(string field)
         {
-            if (field.Length > 1)
+            if ((field.Length > 1) && field != ("Xamarin.forms.entry"))
             {
                 return true;
             }
