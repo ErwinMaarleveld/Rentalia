@@ -62,6 +62,13 @@
                    BackgroundColor="OrangeRed"
                    x:Name="desc"/>
 
+                <Entry FontSize="Small"
+                   Placeholder="Prijs per dag"
+                   PlaceholderColor="Black"
+                   TextColor="Black"
+                   BackgroundColor="OrangeRed"
+                   x:Name="price"/>
+
                 <DatePicker BackgroundColor="OrangeRed"
                             TextColor="Black" />
                 <DatePicker BackgroundColor="OrangeRed"

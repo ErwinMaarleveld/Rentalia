@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Rentalia.Data;
 
 namespace Rentalia
 {
@@ -37,7 +38,7 @@ namespace Rentalia
         public void OnClickPlaceOffer(Object sender, EventArgs e)
         {
             var c = new FieldCheckerMethod();
-            c.AddAanbieding();
+            c.AddAanbieding(title.ToString(), desc.ToString(), float.Parse(price.ToString()), DateTime.Now, (Gebruiker)Application.Current.Properties["loggedIn"]);
             App.Current.MainPage = new HubPage();
         }
 
