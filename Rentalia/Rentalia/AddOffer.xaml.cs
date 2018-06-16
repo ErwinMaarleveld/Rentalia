@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -37,6 +36,8 @@ namespace Rentalia
 
         public void OnClickPlaceOffer(Object sender, EventArgs e)
         {
+            var c = new FieldCheckerMethod();
+            c.AddAanbieding();
             App.Current.MainPage = new HubPage();
         }
 

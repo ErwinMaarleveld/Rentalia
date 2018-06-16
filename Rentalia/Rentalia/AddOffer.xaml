@@ -57,7 +57,7 @@
                    x:Name="title"/>
 
             <Entry FontSize="Small"
-                   Placeholder="Description"
+                   Placeholder="Beschrijving"
                    PlaceholderColor="Black"
                    TextColor="Black"
                    BackgroundColor="OrangeRed"
@@ -70,7 +70,7 @@
             <DatePicker TranslationX="50"
                         TranslationY="225"/>
 
-            <Button Text="Sign-in"
+            <Button Text="Plaats aanbieding"
                     FontSize="Small"
                     Clicked="OnClickPlaceOffer"
                     BackgroundColor="OrangeRed"
