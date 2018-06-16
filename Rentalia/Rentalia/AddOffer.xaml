@@ -67,6 +67,7 @@
                    PlaceholderColor="Black"
                    TextColor="Black"
                    BackgroundColor="OrangeRed"
+                   Keyboard="Numeric"
                    x:Name="price"/>
 
                 <DatePicker BackgroundColor="OrangeRed"
