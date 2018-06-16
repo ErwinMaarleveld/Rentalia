@@ -13,12 +13,14 @@
                    Placeholder="E-mail"
                    PlaceholderColor="Black"
                    TextColor="Black"
-                   BackgroundColor="OrangeRed"/>
+                   BackgroundColor="OrangeRed"
+                   x:Name="email"/>
             <Entry IsPassword="True"
                    FontSize="Small"
                    Placeholder="Password"
                    PlaceholderColor="Black"
-                   BackgroundColor="OrangeRed" />
+                   BackgroundColor="OrangeRed" 
+                   x:Name="pass"/>
             <Button Text="Sign-in"
                    FontSize="Small"
                     Clicked="OnClickHub"
