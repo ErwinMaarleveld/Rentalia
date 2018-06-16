@@ -21,5 +21,17 @@ namespace Rentalia
                 return false;
             }
         }
+
+        public bool IsLoggedIn()
+        {
+            if (Application.Current.Properties.ContainsKey("loggedIn"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
