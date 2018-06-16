@@ -73,5 +73,10 @@ namespace Rentalia
                 return null;
             }
         }
+
+        public Bericht AddBericht()
+        {
+            var z = new Login()
+        }
     }
 }
