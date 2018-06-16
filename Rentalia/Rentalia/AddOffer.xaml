@@ -47,37 +47,33 @@
                 </Image.GestureRecognizers>
             </Image>
 
-            <Entry FontSize="Small"
+            <StackLayout Grid.Row="1" Grid.ColumnSpan="4">
+                <Entry FontSize="Small"
                    Placeholder="Titel"
                    PlaceholderColor="Black"
                    TextColor="Black"
                    BackgroundColor="OrangeRed"
-                   TranslationX="50"
-                   TranslationY="100"
                    x:Name="title"/>
 
-            <Entry FontSize="Small"
+                <Entry FontSize="Small"
                    Placeholder="Description"
                    PlaceholderColor="Black"
                    TextColor="Black"
                    BackgroundColor="OrangeRed"
-                   TranslationX="125"
-                   TranslationY="100"
                    x:Name="desc"/>
 
-            <DatePicker TranslationX="50"
-                        TranslationY="150"/>
-            <DatePicker TranslationX="50"
-                        TranslationY="225"/>
+                <DatePicker BackgroundColor="OrangeRed"
+                            TextColor="Black" />
+                <DatePicker BackgroundColor="OrangeRed"
+                            TextColor="Black"/>
 
-            <Button Text="Sign-in"
-                    FontSize="Small"
-                    Clicked="OnClickPlaceOffer"
-                    BackgroundColor="OrangeRed"
-                    BorderColor="Black"
-                    BorderWidth="1"
-                    TranslationX="50"
-                    TranslationY="300" />
+                <Button Text="Voeg offer toe"
+                        FontSize="Small"
+                        Clicked="OnClickPlaceOffer"
+                        BackgroundColor="OrangeRed"
+                        BorderColor="Black"
+                        BorderWidth="1"/>
+            </StackLayout>
 
         </Grid>
     </ContentPage.Content>
