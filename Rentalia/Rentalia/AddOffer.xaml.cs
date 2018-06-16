@@ -38,7 +38,7 @@ namespace Rentalia
         public void OnClickPlaceOffer(Object sender, EventArgs e)
         {
             var c = new FieldCheckerMethod();
-            c.AddAanbieding(title.ToString(), desc.ToString(), float.Parse(price.ToString()), DateTime.Now, (Gebruiker)Application.Current.Properties["loggedIn"]);
+            c.AddAanbieding(title.ToString(), desc.ToString(), float.Parse(price.Text), DateTime.Now, (Gebruiker)Application.Current.Properties["loggedIn"]);
             App.Current.MainPage = new HubPage();
         }
 
