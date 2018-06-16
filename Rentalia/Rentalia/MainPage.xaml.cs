@@ -30,7 +30,7 @@ namespace Rentalia
             }
             else
             {
-                DisplayAlert("Alert", "Het e-mail adres en wachtwoord komen niet overeen.", "Ben ik lekker mee...");
+                DisplayAlert("Alert", "Het e-mail adres en wachtwoord komen niet overeen.", "Oke");
             }
         }
 

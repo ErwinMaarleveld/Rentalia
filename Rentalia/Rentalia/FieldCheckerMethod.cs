@@ -62,7 +62,7 @@ namespace Rentalia
         public Aanbieding AddAanbieding(string title, string desc, float prijs, DateTime geplaatst, Gebruiker ingelogd)
         {
             var z = new Login();
-            if (IsFilled(title) && IsFilled(desc) && IsFilled(prijs.ToString()) && IsFilled(ingelogd.Voornaam))
+            if (IsFilled(title) && IsFilled(desc) && IsFilled(prijs.ToString()))
             {
                 Aanbieding nieuweAanbieding = new Aanbieding("defaultACode", title, desc, prijs, geplaatst, z.loggedin);
                 return nieuweAanbieding;
