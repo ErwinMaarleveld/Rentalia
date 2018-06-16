@@ -47,7 +47,7 @@
             </Image>
 
             <Frame BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1" Grid.ColumnSpan="4" BorderColor="Black" HeightRequest="280" WidthRequest="200">
-
+                <ContentView Content="Rentalia.AdLayout"/>
             </Frame>
 
         </Grid>
