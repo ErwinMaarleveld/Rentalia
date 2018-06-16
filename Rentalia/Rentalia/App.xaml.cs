@@ -12,7 +12,7 @@ namespace Rentalia
 		{
 			InitializeComponent();
 
-			MainPage = new Rentalia.MainPage();
+			MainPage = new MainPage();
 		}
 
 		protected override void OnStart ()
