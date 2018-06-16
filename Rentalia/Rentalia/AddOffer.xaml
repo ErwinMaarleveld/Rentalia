@@ -15,6 +15,7 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
 
@@ -47,12 +48,14 @@
                 </Image.GestureRecognizers>
             </Image>
 
-            <StackLayout Grid.Row="1" Grid.ColumnSpan="4">
+            <StackLayout Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3">
                 <Entry FontSize="Small"
                    Placeholder="Titel"
                    PlaceholderColor="Black"
                    TextColor="Black"
                    BackgroundColor="OrangeRed"
+                       TranslationY="40"
+                       Scale="1.5"
                    x:Name="title"/>
 
                 <Entry FontSize="Small"
@@ -60,6 +63,8 @@
                    PlaceholderColor="Black"
                    TextColor="Black"
                    BackgroundColor="OrangeRed"
+                       TranslationY="60"
+                       Scale="1.5"
                    x:Name="desc"/>
 
                 <Entry FontSize="Small"
@@ -68,11 +73,17 @@
                    TextColor="Black"
                    BackgroundColor="OrangeRed"
                    Keyboard="Numeric"
+                       TranslationY="80"
+                       Scale="1.5"
                    x:Name="price"/>
 
                 <DatePicker BackgroundColor="OrangeRed"
+                            Scale="1.5"
+                            TranslationY="100"
                             TextColor="Black" />
                 <DatePicker BackgroundColor="OrangeRed"
+                            Scale="1.5"
+                            TranslationY="120"
                             TextColor="Black"/>
 
                 <Button Text="Voeg offer toe"
@@ -80,6 +91,8 @@
                         Clicked="OnClickPlaceOffer"
                         BackgroundColor="OrangeRed"
                         BorderColor="Black"
+                        Scale="1.5"
+                        TranslationY="150"
                         BorderWidth="1"/>
             </StackLayout>
 

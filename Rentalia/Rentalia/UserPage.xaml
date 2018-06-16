@@ -16,6 +16,7 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
                 <!--message icon-->
@@ -46,8 +47,15 @@
                     </Image.GestureRecognizers>
                 </Image>
 
-                <Frame BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" TranslationY="10" Grid.Row="1" Grid.ColumnSpan="4" BorderColor="Black" HeightRequest="280" WidthRequest="200">
-                    
+                <!--add offer icon-->
+                <Image Source="plusIcon.png" VerticalOptions="Center" TranslationX="-10" WidthRequest="50" HeightRequest="50" TranslationY="4" Grid.Row="0"  Grid.Column="4">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnClickAddOffer" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Frame BackgroundColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Grid.Row="1" Grid.ColumnSpan="5" HeightRequest="700" WidthRequest="700" BorderColor="Black" >
+
                 </Frame>
 
             </Grid>
