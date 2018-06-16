@@ -61,7 +61,6 @@ namespace Rentalia
 
         public Aanbieding AddAanbieding(string title, string desc, float prijs, DateTime geplaatst, Gebruiker ingelogd)
         {
-            var z = new Login();
             if (IsFilled(title) && IsFilled(desc) && IsFilled(prijs.ToString()))
             {
                 
@@ -75,9 +74,19 @@ namespace Rentalia
             }
         }
 
-        public Bericht AddBericht()
+        public Bericht AddBericht(string tekst, Aanbieding onderwerp, Gebruiker ontvanger)
         {
-            var z = new Login()
+            if (IsFilled(tekst))
+            {
+                Bericht nieuwBericht = new Bericht(ontvanger, (Gebruiker)Application.Current.Properties["loggedIn"], onderwerp, onderwerp.Gebruiker, DateTime.Now, tekst);
+                return nieuwBericht;
+            }
+            else
+            {
+                DisplayAlert("Alert", "Je probeert een bericht zonder tekst te versturen.", "Oke");
+                return null;
+            }
+            
         }
     }
 }
