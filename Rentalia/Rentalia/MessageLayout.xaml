@@ -5,6 +5,7 @@
   <ContentView.Content>
       <StackLayout>
           <Label Text="hier komt afzender + onderwerp" />
-      </StackLayout>
+            <Entry x:Name="text" FontSize="Small" Placeholder="Bericht" PlaceholderColor="Black" TextColor="Black" BackgroundColor="OrangeRed" />
+        </StackLayout>
   </ContentView.Content>
 </ContentView>

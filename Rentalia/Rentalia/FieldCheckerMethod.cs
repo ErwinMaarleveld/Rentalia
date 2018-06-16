@@ -65,6 +65,7 @@ namespace Rentalia
             if (IsFilled(title) && IsFilled(desc) && IsFilled(prijs.ToString()) && IsFilled(ingelogd.Voornaam))
             {
                 Aanbieding nieuweAanbieding = new Aanbieding("defaultACode", title, desc, prijs, geplaatst, z.loggedin);
+                return nieuweAanbieding;
             }
             else
             {
