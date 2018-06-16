@@ -88,5 +88,12 @@ namespace Rentalia
             }
             
         }
+
+        public Bericht FirstMessage(Aanbieding onderwerp)
+        {
+            var ingelogdeGebruiker = (Gebruiker)Application.Current.Properties["loggedIn"];
+            var firstMessage = AddBericht($"{ingelogdeGebruiker.Voornaam} heeft interesse in uw {onderwerp.Titel}!", onderwerp, onderwerp.Gebruiker);
+            return firstMessage;
+        }
     }
 }
