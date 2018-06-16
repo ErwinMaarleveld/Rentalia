@@ -54,8 +54,10 @@
                     <TapGestureRecognizer Tapped="OnClickAddOffer" NumberOfTapsRequired="1" />
                 </Image.GestureRecognizers>
             </Image>
-            
-            
+
+            <Frame BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" TranslationY="22" Grid.Row="1" Grid.ColumnSpan="4" BorderColor="Black" HeightRequest="245" WidthRequest="200">
+
+            </Frame>
 
 
 
