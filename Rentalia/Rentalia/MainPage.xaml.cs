@@ -24,7 +24,7 @@ namespace Rentalia
         public void OnClickHub(object sender, EventArgs e)
         {//Sign-in / login brings you here
             var b = new Login();
-            if (b.CheckCredentials(email.ToString(), pass.ToString()))
+            if (b.CheckCredentials(email.Text, pass.Text))
             {
                 App.Current.MainPage = new HubPage();
             }

@@ -11,14 +11,22 @@ namespace Rentalia
     {
         public bool IsFilled(string field)
         {
-            if ((field.Length > 1) && field != ("Xamarin.Forms.Entry"))
+            try
             {
-                return true;
+                if ((field.Length > 0) && field != ("Xamarin.Forms.Entry"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch(System.NullReferenceException)
             {
                 return false;
             }
+            
         }
         public bool PassEqual(string pass1, string pass2)
         {
