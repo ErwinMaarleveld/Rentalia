@@ -32,5 +32,10 @@ namespace Rentalia
         {
             App.Current.MainPage = new HubPage();
         }
+
+        public void OnClickAddOffer()
+        {
+            App.Current.MainPage = new AddOffer();
+        }
     }
 }
