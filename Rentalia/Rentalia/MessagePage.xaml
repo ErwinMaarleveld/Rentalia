@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Rentalia.OfferPage"
-             BackgroundImage="background2.jpg"
-             Title="OfferPage">
+             x:Class="Rentalia.MessagePage"
+             BackgroundImage="background2.jpg">
     <ContentPage.Content>
         <Grid RowSpacing="0">
             <Grid.RowDefinitions>
@@ -47,6 +46,5 @@
             </Image>
 
         </Grid>
-
     </ContentPage.Content>
 </ContentPage>
