@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Xamarin.Forms;
 
 namespace Rentalia
@@ -18,8 +17,8 @@ namespace Rentalia
 
 		protected override void OnStart ()
 		{
-			// Handle when your app starts
-		}
+            //START
+        }
 
 		protected override void OnSleep ()
 		{
