@@ -12,9 +12,17 @@ namespace Rentalia.Data
 
         public Foto(string bestandsnaam, string titel, string beschrijving)
         {
+            if (beschrijving == null)
+            {
+                Beschrijving = "";
+            }
+            else
+            {
+                Beschrijving = beschrijving;
+            }
+
             Bestandsnaam = bestandsnaam;
             Titel = titel;
-            Beschrijving = beschrijving;
         }
     }
 
