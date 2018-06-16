@@ -4,7 +4,7 @@
              x:Class="Rentalia.MessageLayout">
   <ContentView.Content>
       <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
+          <Label Text="hier komt afzender + onderwerp" />
       </StackLayout>
   </ContentView.Content>
 </ContentView>
