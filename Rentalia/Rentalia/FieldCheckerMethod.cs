@@ -39,7 +39,7 @@ namespace Rentalia
             {
                 DateTime now = DateTime.Now;
                 Gebruiker nieuweGebruiker = new Gebruiker("defaultGCode", voornaam, tussen, achternaam, email, now, 0, 0, null, pass1);
-                
+
                 return nieuweGebruiker;
             }
             else if (!(IsFilled(email) && IsFilled(voornaam) && IsFilled(achternaam) && IsFilled(pass1) && IsFilled(pass2)))
@@ -47,7 +47,7 @@ namespace Rentalia
                 DisplayAlert("Alert", "Je hebt niet alle verplichte velden ingevuld!", "Oke");
                 return null;
             }
-            else if(!(PassEqual(pass1, pass2)))
+            else if (!(PassEqual(pass1, pass2)))
             {
                 DisplayAlert("Alert", "De wachtwoorden die je hebt ingevuld komen niet overeen.", "Oke");
                 return null;
