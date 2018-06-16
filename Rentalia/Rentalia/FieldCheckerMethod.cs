@@ -38,7 +38,7 @@ namespace Rentalia
             if (IsFilled(email) && IsFilled(voornaam) && IsFilled(achternaam) && IsFilled(pass1) && PassEqual(pass1, pass2))
             {
                 DateTime now = DateTime.Now;
-                Gebruiker nieuweGebruiker = new Gebruiker("defaultGCode", voornaam, tussen, achternaam, email, now, 0, 0);
+                Gebruiker nieuweGebruiker = new Gebruiker("defaultGCode", voornaam, tussen, achternaam, email, now, 0, 0, null, pass1);
                 
                 return nieuweGebruiker;
             }
@@ -59,28 +59,18 @@ namespace Rentalia
             }
         }
 
-        //public bool CheckLogin(string email, string pass)
-        //{
-        //    if ((email == /*EMAIL OPGEHAALD UIT DATABASE WAT OVEREEN KOMT MET PASS*/) && (pass == /*PASS OPGEHAALD UIT DATABASE WAT OVEREEN KOMT MET EMAIL*/))
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
-
-        //public Aanbieding AddAanbieding(string title, string description, string, float prijs, DateTime geplaatst, Gebruiker eigenaar)
-        //{
-        //    if ()
-        //    {
-        //        Aanbieding nieuweAanbieding = new Aanbieding('defaultACode', title, desc);
-        //    }
-        //    else
-        //    {
-        //        DisplayAlert("Alert", "Je hebt niet alle velden ingevoerd.", "Oke");
-        //    }
-        //}
+        public Aanbieding AddAanbieding(string title, string desc, string, float prijs, DateTime geplaatst, Gebruiker ingelogd)
+        {
+            var z = new Login();
+            if (IsFilled(title) && IsFilled(desc) && IsFilled(prijs.ToString()) && IsFilled(ingelogd.Voornaam))
+            {
+                Aanbieding nieuweAanbieding = new Aanbieding("defaultACode", title, desc, prijs, geplaatst, z.loggedin);
+            }
+            else
+            {
+                DisplayAlert("Alert", "Je hebt niet alle velden ingevoerd.", "Oke");
+                return null;
+            }
+        }
     }
 }

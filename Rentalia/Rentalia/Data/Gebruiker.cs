@@ -15,8 +15,9 @@ namespace Rentalia.Data
         public float Rating { get; protected set; }
         public int AantalRatings { get; protected set; }
         public Foto Profielfoto { get; protected set; }
+        public string Wachtwoord { get; private set; }
 
-        public Gebruiker(string gCode, string voornaam, string tussenvoegsel, string achternaam, string email, DateTime lidGeworden, float rating, int aantalRatings, Foto profielfoto = null)
+        public Gebruiker(string gCode, string voornaam, string tussenvoegsel, string achternaam, string email, DateTime lidGeworden, float rating, int aantalRatings, Foto profielfoto = null, string wachtwoord = null)
         {
             GCode = gCode;
             Voornaam = voornaam;
@@ -33,6 +34,14 @@ namespace Rentalia.Data
             else
             {
                 Profielfoto = profielfoto;
+            }
+            if (wachtwoord == null)
+            {
+                Wachtwoord = "";
+            }
+            else
+            {
+                Wachtwoord = wachtwoord;
             }
         }
     }
