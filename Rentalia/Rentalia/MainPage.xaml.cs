@@ -23,15 +23,15 @@ namespace Rentalia
 
         public void OnClickHub(object sender, EventArgs e)
         {//Sign-in / login brings you here
-            var b = new FieldCheckerMethod();
-            if (b.CheckLogin(email.ToString(), pass.ToString()))
-            {
+        //    var b = new FieldCheckerMethod();
+        //    if (b.CheckLogin(email.ToString(), pass.ToString()))
+        //    {
                 App.Current.MainPage = new HubPage();
-            }
-            else
-            {
-                DisplayAlert("Alert", "Het e-mail adres en wachtwoord komen niet overeen.", "Ben ik lekker mee...");
-            }
+        //    }
+        //    else
+        //    {
+        //        DisplayAlert("Alert", "Het e-mail adres en wachtwoord komen niet overeen.", "Ben ik lekker mee...");
+        //    }
         }
 
     }

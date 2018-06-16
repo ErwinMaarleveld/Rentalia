@@ -9,14 +9,13 @@ using Xamarin.Forms.Xaml;
 
 namespace Rentalia
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class OfferPage : ContentPage
-    {
-        public OfferPage()
-        {
-            InitializeComponent();
-        }
-
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class MessagePage : ContentPage
+	{
+		public MessagePage ()
+		{
+			InitializeComponent ();
+		}
         public void OnClickMailBox()
         {
             App.Current.MainPage = new MessagePage();
@@ -33,6 +32,5 @@ namespace Rentalia
         {
             App.Current.MainPage = new HubPage();
         }
-
     }
 }

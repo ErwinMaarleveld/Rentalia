@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Rentalia.FieldCheckerMethod;
+//using Rentalia.FieldCheckerMethod;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,7 +19,7 @@ namespace Rentalia
 
         public void OnClickMailBox(object sender, EventArgs e)
         {
-            App.Current.MainPage = new MainPage();
+            App.Current.MainPage = new MessagePage();
         }
 
         public void OnCLickUserPage(object sender, EventArgs e)

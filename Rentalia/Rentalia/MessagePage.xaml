@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Rentalia.AddOffer"
+             x:Class="Rentalia.MessagePage"
              BackgroundImage="background2.jpg">
     <ContentPage.Content>
         <Grid RowSpacing="0">
@@ -16,8 +16,6 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-
-
 
             <!--message icon-->
             <Image Source="mailIcon.png" TranslationX="10" WidthRequest="40" HeightRequest="40" TranslationY="3" Grid.Row="0" Grid.Column="0" >
@@ -46,34 +44,6 @@
                     <TapGestureRecognizer Tapped="OnClickHubPage" NumberOfTapsRequired="1" />
                 </Image.GestureRecognizers>
             </Image>
-
-            <StackLayout Grid.Row="1" Grid.ColumnSpan="4">
-                <Entry FontSize="Small"
-                   Placeholder="Titel"
-                   PlaceholderColor="Black"
-                   TextColor="Black"
-                   BackgroundColor="OrangeRed"
-                   x:Name="title"/>
-
-                <Entry FontSize="Small"
-                   Placeholder="Description"
-                   PlaceholderColor="Black"
-                   TextColor="Black"
-                   BackgroundColor="OrangeRed"
-                   x:Name="desc"/>
-
-                <DatePicker BackgroundColor="OrangeRed"
-                            TextColor="Black" />
-                <DatePicker BackgroundColor="OrangeRed"
-                            TextColor="Black"/>
-
-                <Button Text="Voeg offer toe"
-                        FontSize="Small"
-                        Clicked="OnClickPlaceOffer"
-                        BackgroundColor="OrangeRed"
-                        BorderColor="Black"
-                        BorderWidth="1"/>
-            </StackLayout>
 
         </Grid>
     </ContentPage.Content>
