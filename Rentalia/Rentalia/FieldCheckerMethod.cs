@@ -58,5 +58,17 @@ namespace Rentalia
                 return null;
             }
         }
+
+        public bool CheckLogin(string email, string pass)
+        {
+            if ((email == /*EMAIL OPGEHAALD UIT DATABASE WAT OVEREEN KOMT MET PASS*/) && (pass == /*PASS OPGEHAALD UIT DATABASE WAT OVEREEN KOMT MET EMAIL*/))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
