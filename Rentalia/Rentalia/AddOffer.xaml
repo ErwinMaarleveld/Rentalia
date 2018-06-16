@@ -53,7 +53,8 @@
                    TextColor="Black"
                    BackgroundColor="OrangeRed"
                    TranslationX="50"
-                   TranslationY="100"/>
+                   TranslationY="100"
+                   x:Name="title"/>
 
             <Entry FontSize="Small"
                    Placeholder="Description"
@@ -61,12 +62,22 @@
                    TextColor="Black"
                    BackgroundColor="OrangeRed"
                    TranslationX="125"
-                   TranslationY="100"/>
+                   TranslationY="100"
+                   x:Name="desc"/>
 
             <DatePicker TranslationX="50"
                         TranslationY="150"/>
             <DatePicker TranslationX="50"
                         TranslationY="225"/>
+
+            <Button Text="Sign-in"
+                    FontSize="Small"
+                    Clicked="OnClickPlaceOffer"
+                    BackgroundColor="OrangeRed"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    TranslationX="50"
+                    TranslationY="300" />
 
         </Grid>
     </ContentPage.Content>

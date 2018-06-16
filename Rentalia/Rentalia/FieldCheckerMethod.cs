@@ -70,5 +70,17 @@ namespace Rentalia
                 return false;
             }
         }
+
+        public Aanbieding AddAanbieding(string title, string description, string, float prijs, DateTime geplaatst, Gebruiker eigenaar)
+        {
+            if ()
+            {
+                Aanbieding nieuweAanbieding = new Aanbieding('defaultACode', title, desc);
+            }
+            else
+            {
+                DisplayAlert("Alert", "Je hebt niet alle velden ingevoerd.", "Oke");
+            }
+        }
     }
 }
