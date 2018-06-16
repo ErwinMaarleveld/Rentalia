@@ -46,6 +46,10 @@
                     </Image.GestureRecognizers>
                 </Image>
 
+                <Frame BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" TranslationY="10" Grid.Row="1" Grid.ColumnSpan="4" BorderColor="Black" HeightRequest="280" WidthRequest="200">
+                    
+                </Frame>
+
             </Grid>
         </StackLayout>
 
