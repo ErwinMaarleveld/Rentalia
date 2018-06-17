@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using Plugin.FilePicker; //Tijdelijk
-using Plugin.FilePicker.Abstractions;  //tijdelijk
 namespace Rentalia
 {
 	public partial class MainPage : ContentPage
