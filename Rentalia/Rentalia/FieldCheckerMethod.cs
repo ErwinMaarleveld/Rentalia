@@ -69,13 +69,20 @@ namespace Rentalia
 
         public Aanbieding AddAanbieding(string title, string desc, float prijs, Gebruiker ingelogd)
         {
-            if (IsFilled(title) && IsFilled(desc) && IsFilled(prijs.ToString()))
+            string prijsje = prijs.ToString();
+            try
             {
-                
-                Aanbieding nieuweAanbieding = new Aanbieding("defaultACode", title, desc, prijs, DateTime.Now, (Gebruiker)Application.Current.Properties["loggedIn"]);
-                return nieuweAanbieding;
+                if (IsFilled(prijsje) && IsFilled(title) && IsFilled(desc))
+                {
+                    Aanbieding nieuweAanbieding = new Aanbieding("defaultACode", title, desc, prijs, DateTime.Now, (Gebruiker)Application.Current.Properties["loggedIn"]);
+                    return nieuweAanbieding;
+                }
+                else
+                { 
+                    return null;
+                }
             }
-            else
+            catch(System.NullReferenceException)
             {
                 DisplayAlert("Alert", "Je hebt niet alle velden ingevoerd.", "Oke");
                 return null;

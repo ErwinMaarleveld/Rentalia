@@ -38,8 +38,16 @@ namespace Rentalia
         public void OnClickPlaceOffer(Object sender, EventArgs e)
         {
             var c = new FieldCheckerMethod();
-            c.AddAanbieding(title.ToString(), desc.ToString(), float.Parse(price.Text), DateTime.Now, (Gebruiker)Application.Current.Properties["loggedIn"]);
-            App.Current.MainPage = new HubPage();
+            if (c.IsFilled(price.Text) && c.IsFilled(title.Text) && c.IsFilled(desc.Text))
+            {
+                c.AddAanbieding(title.ToString(), desc.ToString(), float.Parse(price.Text), (Gebruiker)Application.Current.Properties["loggedIn"]);
+                App.Current.MainPage = new HubPage();
+            }
+            else
+            {
+                DisplayAlert("Alert", "Je hebt niet alle velden ingevoerd.", "Oke");
+            }
+            
         }
 
     }
