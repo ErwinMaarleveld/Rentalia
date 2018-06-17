@@ -40,11 +40,32 @@ namespace Rentalia
             App.Current.MainPage = new AddOffer();
         }
 
-        [XamlCompilation(XamlCompilationOptions.Compile)]
+        
         public ObservableCollection<string> Items { get; set; }
         public void OfferList()
         {
-            ObservableCollection<string> Items = new ObservableCollection<string>
+            public string name { get; set; }
+            public string title { get; set; }
+            public string desc { get; set; }
+            public float price { get; set; }
+        
+
+            lst.ItemsSource = new List<Contacts>() {  
+                new Contacts()
+                    {
+                        Name = "Umair", Num = "0456445450945", imgsource = "http://bit.ly/2oDQpPT",  
+                    },  
+                    new Contacts()
+                    {
+                        Name = "Cat", Num = "034456445905", imgsource = "http://gtty.im/2psFEos",  
+                    },  
+                    new Contacts()
+                    {
+                        Name = "Nature", Num = "56445905", imgsource = "http://gtty.im/2psFEos",  
+                    },  
+            };
+
+    ObservableCollection<string> Items = new ObservableCollection<string>
             {
                 "Item 1",
                 "Item 2",
@@ -70,5 +91,4 @@ namespace Rentalia
     
 
     
-}
 }
