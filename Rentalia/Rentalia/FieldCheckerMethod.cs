@@ -67,12 +67,12 @@ namespace Rentalia
             }
         }
 
-        public Aanbieding AddAanbieding(string title, string desc, float prijs, DateTime geplaatst, Gebruiker ingelogd)
+        public Aanbieding AddAanbieding(string title, string desc, float prijs, Gebruiker ingelogd)
         {
             if (IsFilled(title) && IsFilled(desc) && IsFilled(prijs.ToString()))
             {
                 
-                Aanbieding nieuweAanbieding = new Aanbieding("defaultACode", title, desc, prijs, geplaatst, (Gebruiker)Application.Current.Properties["loggedIn"]);
+                Aanbieding nieuweAanbieding = new Aanbieding("defaultACode", title, desc, prijs, DateTime.Now, (Gebruiker)Application.Current.Properties["loggedIn"]);
                 return nieuweAanbieding;
             }
             else
