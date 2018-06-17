@@ -113,9 +113,9 @@ namespace Rentalia
         
         public Foto AddFoto(string bestandsnaam, string titel, string beschrijving)
         {
-            if(IsFilled(bestandsnaam.Text) && IsFilled(Title.Text))
+            if(IsFilled(bestandsnaam.ToString()) && IsFilled(Title.ToString()))
             {
-                Foto nieuweFoto = new Foto(bestandsnaam.Text, titel.Text, beschrijving.Text);
+                Foto nieuweFoto = new Foto(bestandsnaam.ToString(), titel.ToString(), beschrijving.ToString());
                 return nieuweFoto;//fildedata.Dataary naar database w/ allon
             }
             else
