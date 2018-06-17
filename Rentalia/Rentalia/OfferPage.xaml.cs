@@ -56,7 +56,7 @@ namespace Rentalia
                 List<string[]> lijst = new List<string[]>();
                 foreach (string[] l in lijst)
                 {
-                    Aanbieding[] AlleAanbiedingen = []; //Allon, work your magic!
+                    Aanbieding[] AlleAanbiedingen = ["AanbiedingTitel", 37, "Allon"]; //Allon, work your magic!
                     foreach (Aanbieding offer in AlleAanbiedingen)
                     {
                         string[] item = { offer.Titel, offer.Huurprijs.ToString(), offer.Gebruiker.Voornaam, offer.Fotos[0].ToString() };
