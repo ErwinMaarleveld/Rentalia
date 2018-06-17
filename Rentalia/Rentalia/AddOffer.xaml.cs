@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Rentalia.Data;
+using Plugin.FilePicker;
+using Plugin.FilePicker.Abstractions;
 
 namespace Rentalia
 {
@@ -48,6 +50,23 @@ namespace Rentalia
                 DisplayAlert("Alert", "Je hebt niet alle velden ingevoerd.", "Oke");
             }
             
+        }
+
+        async void OnUpload(object sender, EventArgs e)
+        {
+            try
+            {
+
+                FileData filedata = await CrossFilePicker.Current.PickFile();
+                // the dataarray of the file will be found in filedata.DataArray 
+                // file name will be found in filedata.FileName;
+                //etc etc.
+
+            }
+            catch (Exception ex)
+            {
+                ExceptionHandler.ShowException(ex.Message);
+            }
         }
 
     }
