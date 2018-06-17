@@ -51,13 +51,14 @@ namespace Rentalia
             }
             
         }
-
         async void OnUpload(object sender, EventArgs e)
         {
             try
             {
 
                 FileData filedata = await CrossFilePicker.Current.PickFile();
+                var a = new FieldCheckerMethod();
+                a.AddFoto(filedata.FileName, "Entry field", "Entry field");
                 // the dataarray of the file will be found in filedata.DataArray 
                 // file name will be found in filedata.FileName;
                 //etc etc.
@@ -65,7 +66,8 @@ namespace Rentalia
             }
             catch (Exception ex)
             {
-                ExceptionHandler.ShowException(ex.Message);
+                await DisplayAlert("Alert", $"Error: {ex}", "Oke");
+                //ExceptionHandler.ShowException(ex.Message);
             }
         }
 
