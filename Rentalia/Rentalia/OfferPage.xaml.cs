@@ -46,10 +46,11 @@ namespace Rentalia
 
     public class ListOffers : OfferPage
         {
+        /*
             public string title { get; set; }
             public float num { get; set; }
             public string imgsource { get; set; }
-           
+           */
 
             public void GenerateList()
             {
@@ -59,8 +60,11 @@ namespace Rentalia
                     Aanbieding[] AlleAanbiedingen = [new Aanbieding("Code", "Titel", "Beschrijving", float.Parse(67.ToString()), DateTime.Now, new Gebruiker("Code", "Voornaam", "Tussen", "Achternaam", "Email", DateTime.Now, 0, 0))]; //Allon, work your magic!
                     foreach (Aanbieding offer in AlleAanbiedingen)
                     {
-                        string[] item = { offer.Titel, offer.Huurprijs.ToString(), offer.Gebruiker.Voornaam, offer.Fotos[0].ToString() };
-                        lijst.Add(item);
+                        string[] item = { offer.Titel, offer.Huurprijs.ToString(), offer.Gebruiker.Voornaam, offer.Fotos[0].ToString()};
+                        lijst.Title = item[0];
+                        Price = item[1];
+
+                          //lijst.Add(item);
                     
                     }
 
