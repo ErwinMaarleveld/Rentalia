@@ -66,7 +66,7 @@
                                 <ViewCell>
                                     <StackLayout Orientation="Horizontal">
                                         <StackLayout Orientation="Vertical">
-                                            <Label Text="{Binding Name}" Font="18"></Label>
+                                            <Label Text="{Binding Title}" Font="18"></Label>
                                             <Label Text="{Binding Num}" TextColor="Gray"></Label>
                                         </StackLayout>
                                         <Image Source="{Binding imgsource}" HeightRequest="30" WidthRequest="50" HorizontalOptions="EndAndExpand"></Image>

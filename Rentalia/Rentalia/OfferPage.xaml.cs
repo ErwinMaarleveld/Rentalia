@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
-
+using Rentalia.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Rentalia
 {
+
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class OfferPage : ContentPage
     {
@@ -40,55 +42,32 @@ namespace Rentalia
             App.Current.MainPage = new AddOffer();
         }
 
+    }
 
-        public ObservableCollection<string> Items { get; set; }
-
-        public string name { get; set; }
-        public string title { get; set; }
-        public string desc { get; set; }
-        public float price { get; set; }
-        public string imgsource { get; set; }
-
-
-        MyListView.ItemsSource = new List<OfferPage>() {  
-        new OfferPage()
+    public class ListOffers : OfferPage
         {
-            name = "Umair", desc = "0456445450945", imgsource = "http://bit.ly/2oDQpPT",  
-        }
-        new OfferPage()
-        {
-            name = "Cat", desc = "034456445905", imgsource = "http://gtty.im/2psFEos",  
-        }
-        new OfferPage()
-        {
-            name = "Nature", desc = "56445905", imgsource = "http://gtty.im/2psFEos",  
-        }
+            public string title { get; set; }
+            public float num { get; set; }
+            public string imgsource { get; set; }
+           
 
+            public List<string> GenerateList()
+            {
+                List<string[]> lijst = new List<string[]>();
+                foreach (string[] l in lijst)
+                {
+                    Aanbieding[] AlleAanbiedingen = []; //Allon, work your magic!
+                    foreach (Aanbieding offer in AlleAanbiedingen)
+                    {
+                        string[] item = { offer.Titel, offer.Huurprijs.ToString(), offer.Gebruiker.Voornaam, offer.Fotos[0].ToString() };
+                        lijst.Add(item);
+                    }
 
-        ObservableCollection<string> Items = new ObservableCollection<string>
-        {
-        "Item 1",
-        "Item 2",
-        "Item 3",
-        "Item 4",
-        "Item 5"
-        };
-
-        ObservableCollection<string> MyListView.ItemsSource = (ObservableCollection<string>) Items;
-
-
-        async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            if (e.Item == null)
-                return;
-
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
-
-            //Deselect Item
-            ((ListView)sender).SelectedItem = null;
+                }
+            }
         }
     };
-}
+
 
     
 
