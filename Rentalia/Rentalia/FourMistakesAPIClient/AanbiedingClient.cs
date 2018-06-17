@@ -16,7 +16,7 @@ namespace Rentalia.FourMistakesAPIClient
 
         public AanbiedingClient()
         {
-            Url = "http://localhost:64838/api/aanbieding/";
+            Url = "http://localhost:5000/api/aanbieding/";
             Request = WebRequest.CreateHttp(Url);
             Request.Accept = "application/json";
             Request.UserAgent = "Rentalia Xamarin app";
