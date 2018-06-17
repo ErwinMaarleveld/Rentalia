@@ -42,35 +42,26 @@ namespace Rentalia
             App.Current.MainPage = new AddOffer();
         }
 
+        public List<List<string>> GenerateList()
+        {
+            List<List<string>> lijst = new List<List<string>>(); //Generate list
+
+            Aanbieding[] alleAanbiedingen = new Aanbieding[1];
+            foreach (Aanbieding offer in alleAanbiedingen) //Fill in list
+            {
+                List<string> sublijst = new List<string>();
+                sublijst.Add(offer.Titel);
+                sublijst.Add(offer.Huurprijs.ToString());
+                sublijst.Add(offer.Fotos[0].ToString());
+                lijst.Add(sublijst);
+            }
+
+            return lijst;
+        }
+
     }
 
-    public class ListOffers : OfferPage
-        {
-        /*
-            public string title { get; set; }
-            public float num { get; set; }
-            public string imgsource { get; set; }
-           */
-
-            public void GenerateList()
-            {
-                List<string[]> lijst = new List<string[]>();
-                foreach (string[] l in lijst)
-                {
-                    Aanbieding[] AlleAanbiedingen = [new Aanbieding("Code", "Titel", "Beschrijving", float.Parse(67.ToString()), DateTime.Now, new Gebruiker("Code", "Voornaam", "Tussen", "Achternaam", "Email", DateTime.Now, 0, 0))]; //Allon, work your magic!
-                    foreach (Aanbieding offer in AlleAanbiedingen)
-                    {
-                        string[] item = { offer.Titel, offer.Huurprijs.ToString(), offer.Gebruiker.Voornaam, offer.Fotos[0].ToString()};
-                        lijst.Title = item[0];
-                        Price = item[1];
-
-                          //lijst.Add(item);
-                    
-                    }
-
-                }
-            }
-        }
+    
     };
 
 
