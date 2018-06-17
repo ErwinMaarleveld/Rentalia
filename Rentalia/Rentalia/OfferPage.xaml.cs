@@ -40,15 +40,11 @@ namespace Rentalia
             App.Current.MainPage = new AddOffer();
         }
 
-    }
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public ObservableCollection<string> Items { get; set; }
-
-    public OfferList()
-    {
-        InitializeComponent();
-
-        Items = new ObservableCollection<string>
+        [XamlCompilation(XamlCompilationOptions.Compile)]
+        public ObservableCollection<string> Items { get; set; }
+        public void OfferList()
+        {
+            ObservableCollection<string> Items = new ObservableCollection<string>
             {
                 "Item 1",
                 "Item 2",
@@ -57,18 +53,22 @@ namespace Rentalia
                 "Item 5"
             };
 
-        MyListView.ItemsSource = Items;
+            MyListView.ItemsSource = (ObservableCollection<string>)Items;
+        }
+
+        async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (e.Item == null)
+                return;
+
+            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+
+            //Deselect Item
+            ((ListView)sender).SelectedItem = null;
+        }
     }
+    
 
-    async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
-    {
-        if (e.Item == null)
-            return;
-
-        await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
-
-        //Deselect Item
-        ((ListView)sender).SelectedItem = null;
-    }
+    
 }
 }
