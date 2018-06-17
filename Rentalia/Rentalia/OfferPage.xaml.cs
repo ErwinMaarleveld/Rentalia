@@ -40,42 +40,42 @@ namespace Rentalia
             App.Current.MainPage = new AddOffer();
         }
 
-        
+
         public ObservableCollection<string> Items { get; set; }
-        public void OfferList()
+
+        public string name { get; set; }
+        public string title { get; set; }
+        public string desc { get; set; }
+        public float price { get; set; }
+        public string imgsource { get; set; }
+
+
+        MyListView.ItemsSource = new List<OfferPage>() {  
+        new OfferPage()
         {
-            public string name { get; set; }
-            public string title { get; set; }
-            public string desc { get; set; }
-            public float price { get; set; }
-        
-
-            lst.ItemsSource = new List<Contacts>() {  
-                new Contacts()
-                    {
-                        Name = "Umair", Num = "0456445450945", imgsource = "http://bit.ly/2oDQpPT",  
-                    },  
-                    new Contacts()
-                    {
-                        Name = "Cat", Num = "034456445905", imgsource = "http://gtty.im/2psFEos",  
-                    },  
-                    new Contacts()
-                    {
-                        Name = "Nature", Num = "56445905", imgsource = "http://gtty.im/2psFEos",  
-                    },  
-            };
-
-    ObservableCollection<string> Items = new ObservableCollection<string>
-            {
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                "Item 4",
-                "Item 5"
-            };
-
-            MyListView.ItemsSource = (ObservableCollection<string>)Items;
+            name = "Umair", desc = "0456445450945", imgsource = "http://bit.ly/2oDQpPT",  
         }
+        new OfferPage()
+        {
+            name = "Cat", desc = "034456445905", imgsource = "http://gtty.im/2psFEos",  
+        }
+        new OfferPage()
+        {
+            name = "Nature", desc = "56445905", imgsource = "http://gtty.im/2psFEos",  
+        }
+
+
+        ObservableCollection<string> Items = new ObservableCollection<string>
+        {
+        "Item 1",
+        "Item 2",
+        "Item 3",
+        "Item 4",
+        "Item 5"
+        };
+
+        ObservableCollection<string> MyListView.ItemsSource = (ObservableCollection<string>) Items;
+
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
@@ -87,8 +87,8 @@ namespace Rentalia
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
         }
-    }
-    
+    };
+}
 
     
-}
+
