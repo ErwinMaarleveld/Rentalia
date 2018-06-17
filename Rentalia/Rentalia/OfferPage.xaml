@@ -55,27 +55,24 @@
             </Image>
 
             <Frame BackgroundColor="Transparent" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Grid.Row="1" Grid.ColumnSpan="5" HeightRequest="700" WidthRequest="700" BorderColor="Black" >
-                <ListView x:Name="lijst"
+
+                <ListView x:Name="FrontList"
                 ItemsSource="{Binding Items}"
                 ItemTapped="Handle_ItemTapped"
                 CachingStrategy="RecycleElement">
-
-                    
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <StackLayout Orientation="Horizontal">
-                                        <StackLayout Orientation="Vertical">
-                                            <Label Text="{Binding Title}" Font="18" x:Name="Title"></Label>
-                                            <Label Text="{Binding Price}" TextColor="Gray"></Label>
-                                        </StackLayout>
-                                        <Image Source="{Binding imgsource}" HeightRequest="30" WidthRequest="50" HorizontalOptions="EndAndExpand"></Image>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding Title}" Font="18"></Label>
+                                        <Label Text="{Binding Price}" TextColor="Gray"></Label>
                                     </StackLayout>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    
-
+                                    <Image Source="{Binding imgsource}" HeightRequest="30" WidthRequest="50" HorizontalOptions="EndAndExpand"></Image>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
                 </ListView>
             </Frame>
 
