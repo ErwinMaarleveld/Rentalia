@@ -103,7 +103,7 @@ namespace Rentalia
             var firstMessage = AddBericht($"{ingelogdeGebruiker.Voornaam} heeft interesse in uw {onderwerp.Titel}!", onderwerp, onderwerp.Gebruiker);
             return firstMessage;
         }
-
+        /*
         public Foto AddFoto(string bestandsnaam, string titel, string beschrijving)
         {
             if(IsFilled(bestandsnaam.Text) && IsFilled(Title.Text))
@@ -115,6 +115,6 @@ namespace Rentalia
             {
                 return null;
             }
-        }
+        }*/
     }
 }
