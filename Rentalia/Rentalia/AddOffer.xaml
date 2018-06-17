@@ -94,6 +94,7 @@
                         Scale="1.5"
                         TranslationY="150"
                         BorderWidth="1"/>
+                <Picker SelectedIndex="1" />
             </StackLayout>
 
         </Grid>

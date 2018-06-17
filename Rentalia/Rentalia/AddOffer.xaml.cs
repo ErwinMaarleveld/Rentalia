@@ -18,7 +18,7 @@ namespace Rentalia
 		}
         public void OnClickMailBox(object sender, EventArgs e)
         {
-            App.Current.MainPage = new MainPage();
+            App.Current.MainPage = new MessagePage();
         }
         public void OnClickOfferPage(object sender, EventArgs e)
         {
