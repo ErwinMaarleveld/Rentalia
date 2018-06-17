@@ -51,7 +51,7 @@ namespace Rentalia
             public string imgsource { get; set; }
            
 
-            public List<string> GenerateList()
+            public void GenerateList()
             {
                 List<string[]> lijst = new List<string[]>();
                 foreach (string[] l in lijst)
@@ -61,6 +61,7 @@ namespace Rentalia
                     {
                         string[] item = { offer.Titel, offer.Huurprijs.ToString(), offer.Gebruiker.Voornaam, offer.Fotos[0].ToString() };
                         lijst.Add(item);
+                    
                     }
 
                 }
