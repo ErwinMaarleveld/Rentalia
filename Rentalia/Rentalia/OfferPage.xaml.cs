@@ -44,7 +44,7 @@ namespace Rentalia
 
         public List<List<string>> GenerateList()
         {
-            FrontList.ItemsSource = new List<List<string>>();
+            //FrontList.ItemsSource = new List<List<string>>();
             List<List<string>> lijst = new List<List<string>>(); //Generate list
 
             Aanbieding[] alleAanbiedingen = new Aanbieding[1];

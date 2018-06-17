@@ -33,7 +33,7 @@ namespace Rentalia
             }
             else
             {
-                DisplayAlert("Alert", $"Je hebt niet alle verplichte velden ingevuld!{email}{voornaam}{achternaam}{pass1}{pass2}", "Oke");
+                DisplayAlert("Alert", "Je hebt niet alle verplichte velden ingevuld!", "Oke");
             }
         }
 

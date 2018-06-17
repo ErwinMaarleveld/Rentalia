@@ -53,7 +53,7 @@
                     <TapGestureRecognizer Tapped="OnClickAddOffer" NumberOfTapsRequired="1" />
                 </Image.GestureRecognizers>
             </Image>
-
+<!--
             <Frame BackgroundColor="Transparent" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Grid.Row="1" Grid.ColumnSpan="5" HeightRequest="700" WidthRequest="700" BorderColor="Black" >
 
                 <ListView x:Name="FrontList"
@@ -75,7 +75,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </Frame>
-
+-->
         </Grid>
 
     </ContentPage.Content>
