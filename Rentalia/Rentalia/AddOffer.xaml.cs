@@ -43,7 +43,7 @@ namespace Rentalia
             if (c.IsFilled(price.Text) && c.IsFilled(title.Text) && c.IsFilled(desc.Text))
             {
                 c.AddAanbieding(title.ToString(), desc.ToString(), float.Parse(price.Text), (Gebruiker)Application.Current.Properties["loggedIn"]);
-                App.Current.MainPage = new HubPage();
+                App.Current.MainPage = new OfferPage();
             }
             else
             {
