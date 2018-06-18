@@ -24,8 +24,10 @@ namespace Rentalia
             
             foreach (Aanbieding offer in alleAanbiedingen)
             {
-                listView.ItemsSource = new string[] { offer.Titel, offer.Huurprijs.ToString(), offer.Fotos[0].Bestandsnaam };
+                string[] thumbnail = new string[] { offer.Titel, offer.Huurprijs.ToString(), offer.Fotos[0].Bestandsnaam };
+                listView.ItemsSource = new string[][] {thumbnail};
             }
+
         }
 
         void OnImageTapped(object sender, EventArgs args)
