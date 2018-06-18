@@ -88,14 +88,14 @@
 
                 <Button Text="Voeg offer toe"
                         FontSize="Small"
-                        Clicked="OnClickPlaceOffer"
+                        Clicked="OnUpload"
                         BackgroundColor="OrangeRed"
                         BorderColor="Black"
                         Scale="1.5"
                         TranslationY="150"
                         BorderWidth="1"/>
             </StackLayout>
-
+            <!-- Button voeg offer toe zou onlclick:OnClickPlaceOffer moeten doen -->
         </Grid>
     </ContentPage.Content>
 </ContentPage>

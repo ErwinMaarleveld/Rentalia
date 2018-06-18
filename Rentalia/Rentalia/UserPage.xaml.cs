@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Plugin.FilePicker;
+using Plugin.FilePicker.Abstractions;
 using Rentalia.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -45,6 +47,28 @@ namespace Rentalia
         private void OnClickAddOffer(object sender, EventArgs e)
         {
             App.Current.MainPage = new AddOffer();
+        }
+
+        async void OnUpload(object sender, EventArgs e)
+        {
+            try
+            {
+
+                FileData filedata = await CrossFilePicker.Current.PickFile();
+                var a = new FieldCheckerMethod();
+                a.AddFoto(filedata.FileName, "Entry field Titel", "Entry field Beschrijving", filedata.DataArray);
+
+                // the dataarray of the file will be found in filedata.DataArray 
+                // file name will be found in filedata.FileName;
+                //etc etc.
+
+
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Alert", $"Error: {ex}", "Oke");
+                //ExceptionHandler.ShowException(ex.Message);
+            }
         }
 
     }
