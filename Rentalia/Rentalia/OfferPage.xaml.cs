@@ -16,6 +16,8 @@ namespace Rentalia
     public partial class OfferPage : ContentPage
     {
         public string Name { get; set; }
+        public string HuurPrijs { get; set; }
+        public string FileName {get; set;}
         public OfferPage()
         {
             BindingContext = this;
@@ -26,9 +28,8 @@ namespace Rentalia
             int counter = 0;
             foreach (Aanbieding offer in alleAanbiedingen)
             {
-                string[] thumbnail = new string[] { offer.Titel, offer.Huurprijs.ToString(), offer.Fotos[0].Bestandsnaam };
+                string[] thumbnail = new string[] { Name = offer.Titel, Huurprijs = offer.Huurprijs.ToString(), FileName = offer.Fotos[0].Bestandsnaam };
                 alleThumbnails[counter] = thumbnail;
-                Name = thumbnail[0];
                 counter++;
             }
             listView.ItemsSource = alleThumbnails;

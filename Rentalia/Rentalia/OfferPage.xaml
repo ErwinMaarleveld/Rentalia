@@ -66,10 +66,10 @@
                                     <StackLayout Orientation="Horizontal">
                                         <StackLayout Orientation="Vertical">
                                             <Label Text="{Binding Name}" TextColor="Black" BackgroundColor="White" Font="18" />
-                                            <Label Text="{Binding thumbnail[1]}" TextColor="Black" BackgroundColor="White" Font="18" />
+                                            <Label Text="{Binding Huurprijs}" TextColor="Black" BackgroundColor="White" Font="18" />
 
                                         </StackLayout>
-                                        <Image Source="{Binding imgsource}" HeightRequest="30" WidthRequest="50" HorizontalOptions="EndAndExpand"></Image>
+                                        <Image Source="{Binding FileName}" HeightRequest="30" WidthRequest="50" HorizontalOptions="EndAndExpand"></Image>
                                     </StackLayout>
                                 </ViewCell>
                             </DataTemplate>
