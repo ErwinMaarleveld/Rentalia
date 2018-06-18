@@ -6,91 +6,66 @@
     <ContentPage.Content>
 
 
-        <Grid VerticalOptions="Center"
-                                 HorizontalOptions="Center">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                
-            </Grid.RowDefinitions>
+        <StackLayout VerticalOptions="Center"
+                     HorizontalOptions="Center"
+                     Spacing="30">
 
 
             <Entry Placeholder="E-mail"
                                FontSize="Small"
                                PlaceholderColor="Black"
+                               Keyboard="Email"
                                BackgroundColor="OrangeRed"
-                               TranslationY="-70"
                                Scale="1.5"
-                               Grid.Row="0"
                                x:Name="email"/>
             <Entry Placeholder="Voornaam"
                                FontSize="Small"
                                PlaceholderColor="Black"
                                BackgroundColor="OrangeRed"
-                               TranslationY="-50"
                                Scale="1.5"
-                               Grid.Row="1"
                                x:Name="voornaam"/>
             <Entry Placeholder="Tussenvoegsel"
                                FontSize="Small"
                                PlaceholderColor="Black"
                                BackgroundColor="OrangeRed"
-                               TranslationY="-30"
                                Scale="1.5"
-                               Grid.Row="2"
                                x:Name="tussen"/>
             <Entry Placeholder="Achternaam"
                                FontSize="Small"
                                PlaceholderColor="Black"
                                BackgroundColor="OrangeRed"
-                               TranslationY="-10"
                                Scale="1.5"
-                               Grid.Row="3"
                                x:Name="achternaam"/>
             <Entry IsPassword="True"
                                FontSize="Small"
                                Placeholder="Password"
                                PlaceholderColor="Black"
                                BackgroundColor="OrangeRed"
-                               TranslationY="10"
                                Scale="1.5"
-                               Grid.Row="4"
                                x:Name="pass1"/>
             <Entry IsPassword="True"
                                FontSize="Small"
                                Placeholder="Retype Password"
                                PlaceholderColor="Black"
                                BackgroundColor="OrangeRed"
-                               TranslationY="30"
                                Scale="1.5"
-                               Grid.Row="5"
                                x:Name="pass2"/>
             <Button Text="Register"
                                 FontSize="Small"
                                 BackgroundColor="OrangeRed"
                                 BorderColor="Black"
                                 BorderWidth="1"
-                                TranslationY="50"
                                 Scale="1.5"
-                                Grid.Row="6"
                                 Clicked="OnClickHub"/>
             <Button Text="I'm already member"
                                 FontSize="Small"
                                 BackgroundColor="OrangeRed"
                                 BorderColor="Black"
                                 BorderWidth="1"
-                                TranslationY="70"
                                 Scale="1.5"
-                                Grid.Row="7"
                                 Clicked="OnClickLogin"/>
 
-        </Grid>
+        </StackLayout>
 
     </ContentPage.Content>
 </ContentPage>

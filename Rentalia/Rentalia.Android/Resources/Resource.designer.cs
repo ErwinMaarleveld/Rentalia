@@ -26,6 +26,8 @@ namespace Rentalia.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::PCLStorage.Resource.String.ApplicationName = global::Rentalia.Droid.Resource.String.ApplicationName;
+			global::PCLStorage.Resource.String.Hello = global::Rentalia.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Rentalia.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -3954,6 +3956,12 @@ namespace Rentalia.Droid
 		
 		public partial class String
 		{
+			
+			// aapt resource value: 0x7f09003d
+			public const int ApplicationName = 2131296317;
+			
+			// aapt resource value: 0x7f09003c
+			public const int Hello = 2131296316;
 			
 			// aapt resource value: 0x7f090015
 			public const int abc_action_bar_home_description = 2131296277;

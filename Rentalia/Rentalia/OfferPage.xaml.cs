@@ -61,6 +61,10 @@ namespace Rentalia
             App.Current.MainPage = new AddOffer();
         }
 
+        private void OnClickRequestPage(object sender, ItemTappedEventArgs e)
+        {
+            App.Current.MainPage = new RequestPage();
+        }
     }
 
     
