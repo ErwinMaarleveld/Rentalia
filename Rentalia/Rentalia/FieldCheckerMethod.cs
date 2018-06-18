@@ -41,6 +41,19 @@ namespace Rentalia
             }
         }
 
+        public bool CheckEmail(string email)
+        {
+            if (email.Contains("@") && email.Contains(".") && !email.Contains("@."))
+            { 
+                return true;
+            }
+            else
+            {
+                DisplayAlert("Alert", "Je ingevulde wachtwoorden komen niet overeen!", "Oke");
+                return false;
+            }
+        }
+
         public Gebruiker AddGebruiker(string voornaam, string tussen, string achternaam, string email, string pass1, string pass2)
         {
             if (IsFilled(email) && IsFilled(voornaam) && IsFilled(achternaam) && IsFilled(pass1) && PassEqual(pass1, pass2))

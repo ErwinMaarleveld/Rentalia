@@ -27,7 +27,7 @@ namespace Rentalia
             var a = new FieldCheckerMethod();
             a.AddGebruiker(voornaam.ToString(), tussen.ToString(), achternaam.ToString(), email.ToString(), pass1.ToString(), pass2.ToString());
 
-            if (a.IsFilled(email.Text) && a.IsFilled(voornaam.Text) && a.IsFilled(achternaam.Text) && a.IsFilled(pass1.Text) && a.PassEqual(pass1.Text, pass2.Text))
+            if (a.IsFilled(email.Text) && a.IsFilled(voornaam.Text) && a.IsFilled(achternaam.Text) && a.IsFilled(pass1.Text) && a.PassEqual(pass1.Text, pass2.Text) && a.CheckEmail(email.Text))
             {
                 App.Current.MainPage = new HubPage();
             }
