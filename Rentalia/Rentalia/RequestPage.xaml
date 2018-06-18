@@ -56,8 +56,8 @@
             </Image>
 
             <Frame BackgroundColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Grid.Row="1" Grid.ColumnSpan="5" HeightRequest="700" WidthRequest="700" BorderColor="Black" >
-                <StackLayout>
-                    <Label Text="{Binding name}" />
+                <StackLayout x:Name="Request">
+                    <Label Text="{Binding aCode}" FontSize="Large" BackgroundColor="OrangeRed" />
                 </StackLayout>
             </Frame>
 
