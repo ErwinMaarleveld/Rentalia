@@ -58,10 +58,12 @@ namespace Rentalia
 
                 FileData filedata = await CrossFilePicker.Current.PickFile();
                 var a = new FieldCheckerMethod();
-                a.AddFoto(filedata.FileName, "Entry field", "Entry field");
+                a.AddFoto(filedata.FileName, "Entry field Titel", "Entry field Beschrijving");
+                Application.Current.Properties[filedata.FileName] = filedata.DataArray;
                 // the dataarray of the file will be found in filedata.DataArray 
                 // file name will be found in filedata.FileName;
                 //etc etc.
+
 
             }
             catch (Exception ex)
