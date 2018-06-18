@@ -17,7 +17,21 @@ namespace Rentalia
     {
         public OfferPage()
         {
+            BindingContext = this;
             InitializeComponent();
+            var items = Enumerable.Range(0, 10);
+            listView.ItemsSource = items;
+        }
+        void OnImageTapped(object sender, EventArgs args)
+        {
+            var image = sender as Image;
+            var viewCell = image.Parent.Parent as ViewCell;
+
+            if (image.HeightRequest < 250)
+            {
+                image.HeightRequest = image.Height + 100;
+                viewCell.ForceUpdateSize();
+            }
         }
 
         public void OnClickMailBox()
@@ -40,24 +54,6 @@ namespace Rentalia
         private void OnClickAddOffer(object sender, EventArgs e)
         {
             App.Current.MainPage = new AddOffer();
-        }
-
-        public List<List<string>> GenerateList()
-        {
-            //FrontList.ItemsSource = new List<List<string>>();
-            List<List<string>> lijst = new List<List<string>>(); //Generate list
-
-            Aanbieding[] alleAanbiedingen = new Aanbieding[1];
-            foreach (Aanbieding offer in alleAanbiedingen) //Fill in list
-            {
-                List<string> sublijst = new List<string>();
-                sublijst.Add(offer.Titel);
-                sublijst.Add(offer.Huurprijs.ToString());
-                sublijst.Add(offer.Fotos[0].ToString());
-                lijst.Add(sublijst);
-            }
-
-            return lijst;
         }
 
     }
