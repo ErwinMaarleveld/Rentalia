@@ -9,30 +9,30 @@ using System.Net.Http.Headers;
 
 namespace Rentalia.FourMistakesAPIClient
 {
-    class GebruikerClient
+    class BerichtClient
     {
         private readonly HttpClient Client;
 
         private readonly string Url;
 
-        public GebruikerClient()
+        public BerichtClient()
         {
-            Url = "http://192.168.56.102:80/api/gebruiker/";
+            Url = "http://192.168.56.102:80/api/bericht/";
             Client = new HttpClient();
             Client.DefaultRequestHeaders.Accept.Clear();
             Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public Gebruiker Get(string code)
+        public Bericht[] Get(string code)
         {
             string content = Client.GetStringAsync(Url + $"/{code}").Result;
-            JObject json = JObject.Parse(content);
-            return json.ToObject<Gebruiker>();
+            JArray json = JArray.Parse(content);
+            return json.ToObject<Bericht[]>();
         }
 
-        public bool Post(Gebruiker gebruiker)
+        public bool Post(Bericht bericht)
         {
-            var json = JsonConvert.SerializeObject(gebruiker);
+            var json = JsonConvert.SerializeObject(bericht);
             var response = Client.PostAsync(Url, new StringContent(json, Encoding.UTF8, "application/json")).Result;
             if (response.IsSuccessStatusCode)
             {
@@ -44,10 +44,10 @@ namespace Rentalia.FourMistakesAPIClient
             }
         }
 
-        public bool Put(Gebruiker gebruiker)
+        public bool Put(Bericht bericht)
         {
-            var json = JsonConvert.SerializeObject(gebruiker);
-            var response = Client.PutAsync(Url + $"/{gebruiker.GCode}", new StringContent(json, Encoding.UTF8, "application/json")).Result;
+            var json = JsonConvert.SerializeObject(bericht);
+            var response = Client.PutAsync(Url, new StringContent(json, Encoding.UTF8, "application/json")).Result;
             if (response.IsSuccessStatusCode)
             {
                 return true;
@@ -58,22 +58,11 @@ namespace Rentalia.FourMistakesAPIClient
             }
         }
 
-        public bool Delete(Gebruiker gebruiker)
+        public bool Delete(Bericht bericht)
         {
-            var response = Client.DeleteAsync(Url + $"/{gebruiker.GCode}").Result;
-            if (response.IsSuccessStatusCode)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        public bool Delete(string code)
-        {
-            var response = Client.DeleteAsync(Url + $"/{code}").Result;
+            var json = JsonConvert.SerializeObject(bericht);
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Delete, Url) { Content = new StringContent(json, Encoding.UTF8, "application/json") };
+            var response = Client.SendAsync(request).Result;
             if (response.IsSuccessStatusCode)
             {
                 return true;

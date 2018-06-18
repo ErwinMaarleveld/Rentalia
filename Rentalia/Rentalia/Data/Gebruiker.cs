@@ -17,7 +17,7 @@ namespace Rentalia.Data
         public Foto Profielfoto { get; protected set; }
         public string Wachtwoord { get; private set; }
 
-        public Gebruiker(string gCode, string voornaam, string tussenvoegsel, string achternaam, string email, DateTime lidGeworden, float rating, int aantalRatings, Foto profielfoto = null, string wachtwoord = null)
+        public Gebruiker(string gCode, string voornaam, string tussenvoegsel, string achternaam, string email, DateTime lidGeworden, float rating, int aantalRatings, string wachtwoord = null, Foto profielfoto = null)
         {
             GCode = gCode;
             Voornaam = voornaam;

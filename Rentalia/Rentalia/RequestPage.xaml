@@ -56,8 +56,38 @@
             </Image>
 
             <Frame BackgroundColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Grid.Row="1" Grid.ColumnSpan="5" HeightRequest="700" WidthRequest="700" BorderColor="Black" >
-                <StackLayout x:Name="Request">
-                    <Label Text="{Binding aCode}" FontSize="Large" BackgroundColor="OrangeRed" />
+                <StackLayout>
+                    <ListView x:Name="stackView" HasUnevenRows="true" BackgroundColor="OrangeRed">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="---Titel---" TextColor="Black" FontSize="Large" BackgroundColor="Transparent" FontAttributes="Bold" />
+                                        <Label Text="{Binding Titel}" TextColor="Black" FontSize="Large" BackgroundColor="Transparent" />
+                                        <Label BackgroundColor="Transparent" />
+                                        <Label Text="---Beschrijving---" TextColor="Black" FontSize="Large" BackgroundColor="Transparent" FontAttributes="Bold" />
+                                        <Label Text="{Binding Beschrijving}" TextColor="Black" FontSize="Large" BackgroundColor="Transparent" />
+                                        <Label BackgroundColor="Transparent" />
+                                        <Label Text="---Huurprijs per dag---" TextColor="Black" FontSize="Large" BackgroundColor="Transparent" FontAttributes="Bold" />
+                                        <Label Text="{Binding Huurprijs}" TextColor="Black" FontSize="Large" BackgroundColor="Transparent" />
+                                        <Label BackgroundColor="Transparent" />
+                                        <Label Text="---Datum geplaatst---" TextColor="Black" FontSize="Large" BackgroundColor="Transparent" FontAttributes="Bold" />
+                                        <Label Text="{Binding Geplaatsd}" TextColor="Black" FontSize="Large" BackgroundColor="Transparent" />
+                                        <Label BackgroundColor="Transparent" />
+                                        <Label Text="---Geplaatst door---" TextColor="Black" FontSize="Large" BackgroundColor="Transparent" FontAttributes="Bold" />
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding Gebruiker.Voornaam}" TextColor="Black" FontSize="Large" BackgroundColor="Transparent" />
+                                            <Label Text="{Binding Gebruiker.Tussenvoegsel}" TextColor="Black" FontSize="Large" BackgroundColor="Transparent" />
+                                            <Label Text="{Binding Gebruiker.Achternaam}" TextColor="Black" FontSize="Large" BackgroundColor="Transparent" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                    
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Button Text="Terug" TextColor="Black" FontSize="Large" BackgroundColor="OrangeRed" Clicked="OnClickOfferPage" />
+                    <Button Text="Huurverzoek sturen" TextColor="Black" FontSize="Large" BackgroundColor="OrangeRed" Clicked="OnClickSentRequest" />
                 </StackLayout>
             </Frame>
 
