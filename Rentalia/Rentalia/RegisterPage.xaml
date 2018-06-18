@@ -14,6 +14,7 @@
             <Entry Placeholder="E-mail"
                                FontSize="Small"
                                PlaceholderColor="Black"
+                               Keyboard="Email"
                                BackgroundColor="OrangeRed"
                                Scale="1.5"
                                x:Name="email"/>

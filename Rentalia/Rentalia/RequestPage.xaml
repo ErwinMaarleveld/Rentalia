@@ -42,7 +42,7 @@
             </Image>
 
             <!--log out icon-->
-            <Image Source="logOutIcon.png" TranslationX="-5" WidthRequest="40" HeightRequest="40" TranslationY="3" Grid.Row="0"  Grid.Column="3">
+            <Image Source="homeIcon.png" TranslationX="-5" WidthRequest="40" HeightRequest="40" TranslationY="3" Grid.Row="0"  Grid.Column="3">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnClickHubPage" NumberOfTapsRequired="1" />
                 </Image.GestureRecognizers>
