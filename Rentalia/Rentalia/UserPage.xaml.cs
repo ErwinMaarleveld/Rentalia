@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Rentalia.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,7 +15,12 @@ namespace Rentalia
 		public UserPage ()
 		{
 			InitializeComponent ();
-		}
+            Gebruiker SelectedGebruiker = new Gebruiker("G0001", "Handige", "", "Harry", "handigehardeharry@gmail.com", DateTime.Now, 4.3423f, 27);
+            string profielnaam = $"{SelectedGebruiker.Voornaam} {SelectedGebruiker.Tussenvoegsel} {SelectedGebruiker.Achternaam}";
+            float profielrating = SelectedGebruiker.Rating;
+            //string profielfoto = Path naar profiel foto in database
+
+        }
 
         public void OnClickMailBox(object sender, EventArgs e)
         {
