@@ -86,13 +86,22 @@
                             TranslationY="120"
                             TextColor="Black"/>
 
+                <Button Text="Voeg plaatje toe"
+                        FontSize="Small"
+                        
+                        BackgroundColor="OrangeRed"
+                        BorderColor="Black"
+                        Scale="1.5"
+                        TranslationY="150"
+                        BorderWidth="1"/>
+                
                 <Button Text="Voeg offer toe"
                         FontSize="Small"
                         Clicked="OnClickPlaceOffer"
                         BackgroundColor="OrangeRed"
                         BorderColor="Black"
                         Scale="1.5"
-                        TranslationY="150"
+                        TranslationY="180"
                         BorderWidth="1"/>
             </StackLayout>
             <!-- Button voeg offer toe zou onlclick:OnClickPlaceOffer moeten doen -->
