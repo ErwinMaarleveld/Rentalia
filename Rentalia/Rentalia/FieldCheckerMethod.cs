@@ -132,8 +132,9 @@ namespace Rentalia
         {
             IFolder folder = FileSystem.Current.LocalStorage;
             folder = await folder.CreateFolderAsync("Pictures", CreationCollisionOption.ReplaceExisting);
+
             Foto nieuweFoto = new Foto(bestandsnaam.ToString(), titel.ToString(), beschrijving.ToString());
-            await Storelocal.SaveImage(dataArray, bestandsnaam);
+            await Storelocal.SaveImage(dataArray, bestandsnaam, folder);
             //nieuweFoto moet nog wel naar de database, bestandsnaam moet gegenereert worden.
         }
     }
