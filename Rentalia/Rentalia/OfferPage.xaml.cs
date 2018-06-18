@@ -16,7 +16,7 @@ namespace Rentalia
     public partial class OfferPage : ContentPage
     {
         public string Name { get; set; }
-        public string HuurPrijs { get; set; }
+        public string Huurprijs { get; set; }
         public string FileName {get; set;}
         public OfferPage()
         {
