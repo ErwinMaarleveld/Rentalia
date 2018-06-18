@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Android.App;
+using Android.OS;
+using Java.IO;
 using Rentalia.Data;
 using Xamarin.Forms;
 using PCLStorage;
@@ -156,6 +159,7 @@ namespace Rentalia
             folder = await folder.CreateFolderAsync("Pictures", CreationCollisionOption.ReplaceExisting);
 
             Foto nieuweFoto = new Foto(bestandsnaam.ToString(), titel.ToString(), beschrijving.ToString());
+
             await Storelocal.SaveImage(dataArray, bestandsnaam, folder);
             //nieuweFoto moet nog wel naar de database, bestandsnaam moet gegenereert worden.
         }
