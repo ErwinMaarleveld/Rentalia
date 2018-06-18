@@ -88,7 +88,7 @@
 
                 <Button Text="Voeg offer toe"
                         FontSize="Small"
-                        Clicked="OnUpload"
+                        Clicked="OnClickPlaceOffer"
                         BackgroundColor="OrangeRed"
                         BorderColor="Black"
                         Scale="1.5"
