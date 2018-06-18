@@ -16,11 +16,10 @@ namespace Rentalia
 		{
 			InitializeComponent ();
 		}
-        public Bericht VerstuurBericht(string text, Aanbieding onderwerp, Gebruiker ontvanger)
+        public void VerstuurBericht(string text, Aanbieding onderwerp, Gebruiker ontvanger)
         {
             var a = new FieldCheckerMethod();
-            Bericht nieuwBericht = a.AddBericht(text, onderwerp, ontvanger);
-            return nieuwBericht;
+            a.AddBericht(text, onderwerp, ontvanger);
         }
 	}
 }
