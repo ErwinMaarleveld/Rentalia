@@ -20,16 +20,16 @@ namespace Rentalia.FourMistakesAPIClient
         public AanbiedingClient()
         {
             Url = "http://192.168.56.102:80/api/aanbieding/";
-            Client = new HttpClient { BaseAddress = new Uri(Url) };
+            Client = new HttpClient();
             Client.DefaultRequestHeaders.Accept.Clear();
             Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public List<Aanbieding> Get()
+        public Aanbieding[] Get()
         {
             string content = Client.GetStringAsync(Url).Result;
             JArray json = JArray.Parse(content);
-            return json.ToObject<List<Aanbieding>>();
+            return json.ToObject<Aanbieding[]>();
         }
 
         public Aanbieding Get(string code)
@@ -39,10 +39,58 @@ namespace Rentalia.FourMistakesAPIClient
             return json.ToObject<Aanbieding>();
         }
 
-        public void Post(Aanbieding aanbieding)
+        public bool Post(Aanbieding aanbieding)
         {
-            string json = JsonConvert.SerializeObject(aanbieding);
-            var response = Client.PostAsync(Url, new StringContent(json)).Result;
+            var json = JsonConvert.SerializeObject(aanbieding);
+            var response = Client.PostAsync(Url, new StringContent(json, Encoding.UTF8, "application/json")).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool Put(Aanbieding aanbieding)
+        {
+            var json = JsonConvert.SerializeObject(aanbieding);
+            var response = Client.PutAsync(Url + $"/{aanbieding.ACode}", new StringContent(json, Encoding.UTF8, "application/json")).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool Delete(Aanbieding aanbieding)
+        {
+            var response = Client.DeleteAsync(Url + $"/{aanbieding.ACode}").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool Delete(string code)
+        {
+            var response = Client.DeleteAsync(Url + "/" + code).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
