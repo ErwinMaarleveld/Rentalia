@@ -58,15 +58,15 @@
             <Frame BackgroundColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Grid.Row="1" Grid.ColumnSpan="5" HeightRequest="700" WidthRequest="700" BorderColor="Black" >
 
                 <StackLayout Padding="0,20,0,0">
-                    <Label Text="Dynamic Resizing Demo" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label Text="Alle Offers" FontAttributes="Bold" HorizontalOptions="Center" />
                     <ListView x:Name="listView" HasUnevenRows="true">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
                                     <StackLayout Orientation="Horizontal">
                                         <StackLayout Orientation="Vertical">
-                                            <Label Text="{Binding this.items}" Font="18"></Label>
-                                            <Label Text="{Binding items}" TextColor="Gray"></Label>
+                                            <Label Text="{Binding Converter=thumbnail[1]}" TextColor="Black" BackgroundColor="White" Font="18" />
+                                            <Label Text="{Binding thumbnail[1]}" TextColor="Black" BackgroundColor="White" Font="18" />
 
                                         </StackLayout>
                                         <Image Source="{Binding imgsource}" HeightRequest="30" WidthRequest="50" HorizontalOptions="EndAndExpand"></Image>
