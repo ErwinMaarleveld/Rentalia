@@ -23,16 +23,8 @@ namespace Rentalia
             BindingContext = this;
             InitializeComponent();
             //var items = Enumerable.Range(0, 10);
-            Aanbieding[] alleAanbiedingen = new Aanbieding[] {new Aanbieding("veld", "veld", "veld", 69, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0) ), new Aanbieding("veld", "veld", "veld", 69, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0))};
-            Array[] alleThumbnails = new Array[alleAanbiedingen.Length];
-            int counter = 0;
-            foreach (Aanbieding offer in alleAanbiedingen)
-            {
-                string[] thumbnail = new string[] { Name = offer.Titel, Huurprijs = offer.Huurprijs.ToString(), FileName = offer.Fotos[0].Bestandsnaam };
-                alleThumbnails[counter] = thumbnail;
-                counter++;
-            }
-            listView.ItemsSource = alleThumbnails;
+            Aanbieding[] alleAanbiedingen = new Aanbieding[] {new Aanbieding("veld", "veld1.1", "veld1.2", 69, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0) ), new Aanbieding("veld", "veld2.1", "veld2.2", 69, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0))};
+            listView.ItemsSource = alleAanbiedingen;
         }
 
         void OnImageTapped(object sender, EventArgs args)

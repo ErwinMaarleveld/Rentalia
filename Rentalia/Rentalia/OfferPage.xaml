@@ -58,18 +58,17 @@
             <Frame BackgroundColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Grid.Row="1" Grid.ColumnSpan="5" HeightRequest="700" WidthRequest="700" BorderColor="Black" >
 
                 <StackLayout Padding="0,20,0,0">
-                    <Label Text="Alle Offers" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label Text="Alle aanbiedingen" FontAttributes="Bold" HorizontalOptions="Center" />
                     <ListView x:Name="listView" HasUnevenRows="true">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
                                     <StackLayout Orientation="Horizontal">
-                                        <StackLayout Orientation="Vertical">
-                                            <Label Text="{Binding Name}" TextColor="Black" BackgroundColor="White" Font="18" />
-                                            <Label Text="{Binding Huurprijs}" TextColor="Black" BackgroundColor="White" Font="18" />
-
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding Titel}" TextColor="Black" BackgroundColor="White" Font="18" />
+                                            <Label Text="{Binding Beschrijving}" TextColor="Black" BackgroundColor="White" Font="18" />
                                         </StackLayout>
-                                        <Image Source="{Binding FileName}" HeightRequest="30" WidthRequest="50" HorizontalOptions="EndAndExpand"></Image>
+                                        <Image Source="{Binding Fotos[0].Bestandsnaam}" HeightRequest="30" WidthRequest="50" HorizontalOptions="EndAndExpand"></Image>
                                     </StackLayout>
                                 </ViewCell>
                             </DataTemplate>
