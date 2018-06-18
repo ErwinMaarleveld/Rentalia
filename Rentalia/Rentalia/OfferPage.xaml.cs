@@ -21,13 +21,15 @@ namespace Rentalia
             InitializeComponent();
             //var items = Enumerable.Range(0, 10);
             Aanbieding[] alleAanbiedingen = new Aanbieding[] {new Aanbieding("veld", "veld", "veld", 69, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0) ), new Aanbieding("veld", "veld", "veld", 69, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0))};
-            
+            Array[] alleThumbnails = new Array[alleAanbiedingen.Length];
+            int counter = 0;
             foreach (Aanbieding offer in alleAanbiedingen)
             {
                 string[] thumbnail = new string[] { offer.Titel, offer.Huurprijs.ToString(), offer.Fotos[0].Bestandsnaam };
-                listView.ItemsSource = new string[][] {thumbnail};
+                alleThumbnails[counter] = thumbnail;
+                counter++;
             }
-
+            listView.ItemsSource = alleThumbnails;
         }
 
         void OnImageTapped(object sender, EventArgs args)
