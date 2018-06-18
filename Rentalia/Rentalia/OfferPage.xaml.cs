@@ -19,9 +19,15 @@ namespace Rentalia
         {
             BindingContext = this;
             InitializeComponent();
-            var items = Enumerable.Range(0, 10);
-            listView.ItemsSource = items;
+            //var items = Enumerable.Range(0, 10);
+            Aanbieding[] alleAanbiedingen = new Aanbieding[] {new Aanbieding("veld", "veld", "veld", 69, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0) ), new Aanbieding("veld", "veld", "veld", 69, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0))};
+            
+            foreach (Aanbieding offer in alleAanbiedingen)
+            {
+                listView.ItemsSource = new string[] { offer.Titel, offer.Huurprijs.ToString(), offer.Fotos[0].Bestandsnaam };
+            }
         }
+
         void OnImageTapped(object sender, EventArgs args)
         {
             var image = sender as Image;
