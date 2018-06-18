@@ -7,35 +7,32 @@
 
 
         <StackLayout VerticalOptions="Center"
-                                 HorizontalOptions="Center">
+                     HorizontalOptions="Center"
+                     Spacing="30">
 
 
             <Entry Placeholder="E-mail"
                                FontSize="Small"
                                PlaceholderColor="Black"
                                BackgroundColor="OrangeRed"
-                               TranslationY="-70"
                                Scale="1.5"
                                x:Name="email"/>
             <Entry Placeholder="Voornaam"
                                FontSize="Small"
                                PlaceholderColor="Black"
                                BackgroundColor="OrangeRed"
-                               TranslationY="-50"
                                Scale="1.5"
                                x:Name="voornaam"/>
             <Entry Placeholder="Tussenvoegsel"
                                FontSize="Small"
                                PlaceholderColor="Black"
                                BackgroundColor="OrangeRed"
-                               TranslationY="-30"
                                Scale="1.5"
                                x:Name="tussen"/>
             <Entry Placeholder="Achternaam"
                                FontSize="Small"
                                PlaceholderColor="Black"
                                BackgroundColor="OrangeRed"
-                               TranslationY="-10"
                                Scale="1.5"
                                x:Name="achternaam"/>
             <Entry IsPassword="True"
@@ -43,7 +40,6 @@
                                Placeholder="Password"
                                PlaceholderColor="Black"
                                BackgroundColor="OrangeRed"
-                               TranslationY="10"
                                Scale="1.5"
                                x:Name="pass1"/>
             <Entry IsPassword="True"
@@ -51,7 +47,6 @@
                                Placeholder="Retype Password"
                                PlaceholderColor="Black"
                                BackgroundColor="OrangeRed"
-                               TranslationY="30"
                                Scale="1.5"
                                x:Name="pass2"/>
             <Button Text="Register"
@@ -59,7 +54,6 @@
                                 BackgroundColor="OrangeRed"
                                 BorderColor="Black"
                                 BorderWidth="1"
-                                TranslationY="50"
                                 Scale="1.5"
                                 Clicked="OnClickHub"/>
             <Button Text="I'm already member"
@@ -67,7 +61,6 @@
                                 BackgroundColor="OrangeRed"
                                 BorderColor="Black"
                                 BorderWidth="1"
-                                TranslationY="70"
                                 Scale="1.5"
                                 Clicked="OnClickLogin"/>
 

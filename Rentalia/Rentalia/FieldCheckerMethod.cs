@@ -41,18 +41,19 @@ namespace Rentalia
             }
         }
 
-        public bool CheckEmail(string email)
+        public bool IsValidEmail(string email)
         {
-            if (email.Contains("@") && email.Contains(".") && !email.Contains("@."))
-            { 
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
                 return true;
             }
-            else
+            catch
             {
-                DisplayAlert("Alert", "Je ingevulde wachtwoorden komen niet overeen!", "Oke");
                 return false;
             }
         }
+       
 
         public Gebruiker AddGebruiker(string voornaam, string tussen, string achternaam, string email, string pass1, string pass2)
         {
