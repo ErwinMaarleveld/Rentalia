@@ -58,8 +58,8 @@
             <Frame BackgroundColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Grid.Row="1" Grid.ColumnSpan="5" HeightRequest="700" WidthRequest="700" BorderColor="Black" >
 
                 <StackLayout Padding="0,20,0,0">
-                    <Label Text="Alle aanbiedingen" FontAttributes="Bold" HorizontalOptions="Center" />
-                    <ListView x:Name="listView" HasUnevenRows="true" ItemTapped="OnClickRequestPage">
+                    <Label Text="---Alle aanbiedingen---" TextColor="Black" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <ListView x:Name="listView" HasUnevenRows="true" BackgroundColor="OrangeRed" ItemTapped="OnClickRequestPage">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>

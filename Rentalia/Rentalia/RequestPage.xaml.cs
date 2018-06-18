@@ -13,11 +13,12 @@ namespace Rentalia
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RequestPage : ContentPage
     {
-        public string code {get;}
 		public RequestPage ()
 		{
+            BindingContext = this;
 			InitializeComponent ();
-            Aanbieding currentAanbieding = new Aanbieding("testAanbieding", "Grasmaaier HUREN", "Goede grasmaair, zgan", 69, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0));
+            Aanbieding[] currentAanbieding = new Aanbieding[] { new Aanbieding("testAanbieding", "Grasmaaier HUREN", "Goede grasmaair, JeWeetToch", 69, DateTime.Now, new Gebruiker("0001", "Bert", "van", "Torens", "bert@appel.nl", DateTime.Now, 0, 0)) };
+            stackView.ItemsSource = currentAanbieding;
         }
         public void OnClickMailBox()
         {
@@ -43,5 +44,12 @@ namespace Rentalia
         {
             App.Current.MainPage = new AddOffer();
         }
+
+        public void OnClickSentRequest()
+        {
+            DisplayAlert("Alert", "Het verzoek is ingediend.", "Oke");
+            App.Current.MainPage = new OfferPage();
+        }
+
     }
 }
