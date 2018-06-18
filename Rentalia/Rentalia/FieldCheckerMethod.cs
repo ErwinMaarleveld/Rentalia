@@ -7,9 +7,11 @@ using Android.OS;
 using Java.IO;
 using Rentalia.Data;
 using Xamarin.Forms;
+using PCLStorage;
 
 namespace Rentalia
 {
+
     public class FieldCheckerMethod : ContentPage
     {
         public bool IsFilled(string field)
@@ -127,6 +129,10 @@ namespace Rentalia
             var firstMessage = AddBericht($"{ingelogdeGebruiker.Voornaam} heeft interesse in uw {onderwerp.Titel}!", onderwerp, onderwerp.Gebruiker);
             return firstMessage;
         }
+
+        
+
+
         public Foto AddFoto(string bestandsnaam, string titel, string beschrijving, Byte[] dataArray)
         {
             if(IsFilled(bestandsnaam.ToString()) && IsFilled(Title.ToString()))
