@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using Android.App;
-using Android.OS;
-using Java.IO;
 using Rentalia.Data;
 using Xamarin.Forms;
 using PCLStorage;
