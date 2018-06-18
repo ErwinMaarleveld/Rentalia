@@ -23,7 +23,7 @@ namespace Rentalia
             BindingContext = this;
             InitializeComponent();
             //var items = Enumerable.Range(0, 10);
-            Aanbieding[] alleAanbiedingen = new Aanbieding[] {new Aanbieding("veld", "veld1.1", "veld1.2", 69, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0) ), new Aanbieding("veld", "veld2.1", "veld2.2", 69, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0))};
+            Aanbieding[] alleAanbiedingen = new Aanbieding[] {new Aanbieding("veld", "Grasmaaier HUREN", "Goede grasmaair, zgan", 69, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0) ), new Aanbieding("veld", "veld2.1", "veld2.2", 69, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0))};
             listView.ItemsSource = alleAanbiedingen;
         }
 
