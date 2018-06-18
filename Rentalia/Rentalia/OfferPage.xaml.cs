@@ -15,6 +15,7 @@ namespace Rentalia
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class OfferPage : ContentPage
     {
+        public string Name { get; set; }
         public OfferPage()
         {
             BindingContext = this;
@@ -27,6 +28,7 @@ namespace Rentalia
             {
                 string[] thumbnail = new string[] { offer.Titel, offer.Huurprijs.ToString(), offer.Fotos[0].Bestandsnaam };
                 alleThumbnails[counter] = thumbnail;
+                Name = thumbnail[0];
                 counter++;
             }
             listView.ItemsSource = alleThumbnails;

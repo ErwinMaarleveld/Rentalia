@@ -65,7 +65,7 @@
                                 <ViewCell>
                                     <StackLayout Orientation="Horizontal">
                                         <StackLayout Orientation="Vertical">
-                                            <Label Text="{Binding Converter=thumbnail[1]}" TextColor="Black" BackgroundColor="White" Font="18" />
+                                            <Label Text="{Binding Name}" TextColor="Black" BackgroundColor="White" Font="18" />
                                             <Label Text="{Binding thumbnail[1]}" TextColor="Black" BackgroundColor="White" Font="18" />
 
                                         </StackLayout>
