@@ -63,11 +63,14 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-                                    <StackLayout Orientation="Horizontal">
+                                    <StackLayout Orientation="Vertical">
                                         <StackLayout Orientation="Horizontal">
+                                            <Label Text="Te huur: " TextColor="Black" BackgroundColor="White" Font="18" />
                                             <Label Text="{Binding Titel}" TextColor="Black" BackgroundColor="White" Font="18" />
-                                            <Label Text="{Binding Huurprijs}" TextColor="Black" BackgroundColor="White" Font="18" />
+                                            
                                         </StackLayout>
+                                        <Label Text="{Binding Huurprijs}" TextColor="Black" BackgroundColor="White" Font="18" />
+                                        <Label Text="euro per dag." TextColor="Black" BackgroundColor="White" Font="18" />
                                         <Image Source="{Binding Fotos[0].Bestandsnaam}" HeightRequest="30" WidthRequest="50" HorizontalOptions="EndAndExpand"></Image>
                                     </StackLayout>
                                 </ViewCell>
