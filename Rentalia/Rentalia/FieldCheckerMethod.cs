@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Android.App;
+using Android.OS;
+using Java.IO;
 using Rentalia.Data;
 using Xamarin.Forms;
 
@@ -88,7 +91,7 @@ namespace Rentalia
             {
                 if (IsFilled(prijsje) && IsFilled(title) && IsFilled(desc))
                 {
-                    Aanbieding nieuweAanbieding = new Aanbieding("defaultACode", title, desc, prijs, DateTime.Now, (Gebruiker)Application.Current.Properties["loggedIn"]);
+                    Aanbieding nieuweAanbieding = new Aanbieding("defaultACode", title, desc, prijs, DateTime.Now, (Gebruiker)Xamarin.Forms.Application.Current.Properties["loggedIn"]);
                     return nieuweAanbieding;
                 }
                 else
@@ -107,7 +110,7 @@ namespace Rentalia
         {
             if (IsFilled(tekst))
             {
-                Bericht nieuwBericht = new Bericht(ontvanger, (Gebruiker)Application.Current.Properties["loggedIn"], onderwerp, onderwerp.Gebruiker, DateTime.Now, tekst);
+                Bericht nieuwBericht = new Bericht(ontvanger, (Gebruiker)Xamarin.Forms.Application.Current.Properties["loggedIn"], onderwerp, onderwerp.Gebruiker, DateTime.Now, tekst);
                 return nieuwBericht;
             }
             else
@@ -120,17 +123,16 @@ namespace Rentalia
 
         public Bericht FirstMessage(Aanbieding onderwerp)
         {
-            var ingelogdeGebruiker = (Gebruiker)Application.Current.Properties["loggedIn"];
+            var ingelogdeGebruiker = (Gebruiker)Xamarin.Forms.Application.Current.Properties["loggedIn"];
             var firstMessage = AddBericht($"{ingelogdeGebruiker.Voornaam} heeft interesse in uw {onderwerp.Titel}!", onderwerp, onderwerp.Gebruiker);
             return firstMessage;
         }
-        
-        public Foto AddFoto(string bestandsnaam, string titel, string beschrijving)
+        public Foto AddFoto(string bestandsnaam, string titel, string beschrijving, Byte[] dataArray)
         {
             if(IsFilled(bestandsnaam.ToString()) && IsFilled(Title.ToString()))
             {
                 Foto nieuweFoto = new Foto(bestandsnaam.ToString(), titel.ToString(), beschrijving.ToString());
-                return nieuweFoto;//fildedata.Dataary naar database w/ allon
+                return nieuweFoto; //dataArray moet nog in assests gedouwt worden
             }
             else
             {
