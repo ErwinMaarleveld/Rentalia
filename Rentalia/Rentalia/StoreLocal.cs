@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using PCLStorage;
+
 namespace Rentalia
 {
-    class StoreLocal
+    public static class Storelocal
     {
-        string folderName = "Pictures";
         //folder = await folder.CreateFolderAsync(folderName, CreationCollisionOption.ReplaceExisting);
 
         public async static Task SaveImage(this byte[] image, String fileName, IFolder rootFolder = null)

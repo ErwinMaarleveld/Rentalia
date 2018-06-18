@@ -130,20 +130,13 @@ namespace Rentalia
             return firstMessage;
         }
 
-        
-
-
-        public Foto AddFoto(string bestandsnaam, string titel, string beschrijving, Byte[] dataArray)
+        async public void AddFoto(string bestandsnaam, string titel, string beschrijving, Byte[] dataArray)
         {
-            if(IsFilled(bestandsnaam.ToString()) && IsFilled(Title.ToString()))
-            {
-                Foto nieuweFoto = new Foto(bestandsnaam.ToString(), titel.ToString(), beschrijving.ToString());
-                return nieuweFoto; //dataArray moet nog in assests gedouwt worden
-            }
-            else
-            {
-                return null;
-            }
+            IFolder folder = FileSystem.Current.LocalStorage;
+            folder = await folder.CreateFolderAsync("Pictures", CreationCollisionOption.ReplaceExisting);
+            Foto nieuweFoto = new Foto(bestandsnaam.ToString(), titel.ToString(), beschrijving.ToString());
+            await Storelocal.SaveImage(dataArray, bestandsnaam);
+            //nieuweFoto moet nog wel naar de database, bestandsnaam moet gegenereert worden.
         }
     }
 }
