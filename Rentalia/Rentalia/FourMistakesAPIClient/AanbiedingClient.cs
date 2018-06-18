@@ -1,43 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Rentalia.Data;
 using System.Net;
+using System.Net.Http;
 using System.IO;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Rentalia.Data;
+using System.Net.Http.Headers;
 
 namespace Rentalia.FourMistakesAPIClient
 {
     class AanbiedingClient
     {
-        private readonly HttpWebRequest Request;
+        private readonly HttpClient Client;
 
         private readonly string Url;
 
         public AanbiedingClient()
         {
-            Url = "http://localhost:5000/api/aanbieding/";
-            Request = WebRequest.CreateHttp(Url);
-            Request.Accept = "application/json";
-            Request.UserAgent = "Rentalia Xamarin app";
-            Request.Timeout = 20 * 60 * 1000;
+            Url = "http://192.168.56.102:80/api/aanbieding/";
+            Client = new HttpClient { BaseAddress = new Uri(Url) };
+            Client.DefaultRequestHeaders.Accept.Clear();
+            Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public void Get()
+        public List<Aanbieding> Get()
         {
-            Request.Method = "GET";
-            var response = Request.GetResponse();
-
-            string content = string.Empty;
-            using (var stream = response.GetResponseStream())
-            {
-                using (var sr = new StreamReader(stream))
-                {
-                    content = sr.ReadToEnd();
-                }
-            }
-
+            string content = Client.GetStringAsync(Url).Result;
             JArray json = JArray.Parse(content);
+            return json.ToObject<List<Aanbieding>>();
+        }
+
+        public Aanbieding Get(string code)
+        {
+            string content = Client.GetStringAsync(Url + $"/{code}").Result;
+            JObject json = JObject.Parse(content);
+            return json.ToObject<Aanbieding>();
+        }
+
+        public void Post(Aanbieding aanbieding)
+        {
+            string json = JsonConvert.SerializeObject(aanbieding);
+            var response = Client.PostAsync(Url, new StringContent(json)).Result;
         }
     }
 }
