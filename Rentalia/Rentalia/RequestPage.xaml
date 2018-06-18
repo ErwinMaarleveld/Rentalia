@@ -75,7 +75,7 @@
                                         <Label Text="{Binding Geplaatsd}" TextColor="Black" FontSize="Large" BackgroundColor="Transparent" />
                                         <Label BackgroundColor="Transparent" />
                                         <Label Text="---Geplaatst door---" TextColor="Black" FontSize="Large" BackgroundColor="Transparent" FontAttributes="Bold" />
-                                        <StackLayout Orientation="Horizontal">
+                                        <StackLayout Orientation="Horizontal" >
                                             <Label Text="{Binding Gebruiker.Voornaam}" TextColor="Black" FontSize="Large" BackgroundColor="Transparent" />
                                             <Label Text="{Binding Gebruiker.Tussenvoegsel}" TextColor="Black" FontSize="Large" BackgroundColor="Transparent" />
                                             <Label Text="{Binding Gebruiker.Achternaam}" TextColor="Black" FontSize="Large" BackgroundColor="Transparent" />
@@ -86,6 +86,7 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
+                    <Button Text="Naar profiel eigenaar aanbieding" TextColor="Black" FontSize="Large" BackgroundColor="OrangeRed" Clicked="OnClickUserPage" />
                     <Button Text="Terug" TextColor="Black" FontSize="Large" BackgroundColor="OrangeRed" Clicked="OnClickOfferPage" />
                     <Button Text="Huurverzoek sturen" TextColor="Black" FontSize="Large" BackgroundColor="OrangeRed" Clicked="OnClickSentRequest" />
                 </StackLayout>
