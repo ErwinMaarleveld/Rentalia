@@ -19,7 +19,7 @@ namespace Rentalia.FourMistakesAPIClient
 
         public AanbiedingClient()
         {
-            Url = "http://192.168.56.102:80/api/aanbieding/";
+            Url = "http://fourmistakesapi.azurewebsites.net/api/aanbieding/";
             Client = new HttpClient();
             Client.DefaultRequestHeaders.Accept.Clear();
             Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
