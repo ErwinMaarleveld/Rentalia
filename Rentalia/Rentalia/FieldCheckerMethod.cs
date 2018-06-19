@@ -142,20 +142,10 @@ namespace Rentalia
             
         }
 
-        // Methode overbodig, bij berichtenpagina: refresh zodat nieuwste berichten erbij staan. Dan is het teruggegeven van het bericht niet nodig.
-        //public Bericht FirstMessage(Aanbieding onderwerp)
-        //{
-        //    var ingelogdeGebruiker = (Gebruiker)Xamarin.Forms.Application.Current.Properties["loggedIn"];
-        //    var firstMessage = AddBericht($"{ingelogdeGebruiker.Voornaam} heeft interesse in uw {onderwerp.Titel}!", onderwerp, onderwerp.Gebruiker);
-        //    return firstMessage;
-        //}
-
         async public void AddFoto(string bestandsnaam, string titel, string beschrijving, Byte[] dataArray)
         {
             IFolder folder = FileSystem.Current.LocalStorage;
             folder = await folder.CreateFolderAsync("Pictures", CreationCollisionOption.ReplaceExisting);
-
-            Foto nieuweFoto = new Foto(bestandsnaam.ToString(), titel.ToString(), beschrijving.ToString());
 
             await Storelocal.SaveImage(dataArray, bestandsnaam, folder);
             //nieuweFoto moet nog wel naar de database, bestandsnaam moet gegenereert worden.
