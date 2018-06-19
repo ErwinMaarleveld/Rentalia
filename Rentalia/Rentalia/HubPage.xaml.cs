@@ -28,7 +28,8 @@ namespace Rentalia
 
         public void OnCLickUserPage(object sender, EventArgs e)
         {
-            App.Current.MainPage = new UserPage();
+            Gebruiker gebruikert = (Gebruiker)Xamarin.Forms.Application.Current.Properties["LoggedIn"];
+            App.Current.MainPage = new UserPage(gebruikert.GCode);
         }
 
         public void OnCLickLogOut(object sender, EventArgs e)
