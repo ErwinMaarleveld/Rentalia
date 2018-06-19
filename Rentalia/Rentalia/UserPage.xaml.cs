@@ -19,7 +19,7 @@ namespace Rentalia
 		{
 			InitializeComponent ();
             var client = new GebruikerClient();
-            Gebruiker ingelogdeGeruiker = (Gebruiker)Xamarin.Forms.Application.Current.Properties["LoggedIn"];
+            Gebruiker ingelogdeGeruiker = (Gebruiker)Xamarin.Forms.Application.Current.Properties["loggedIn"];
             Gebruiker SelectedGebruiker = client.Get(ingelogdeGeruiker.GCode);
                 //new Gebruiker("G0001", "Handige", "", "Harry", "handigehardeharry@gmail.com", DateTime.Now, 4.3423f, 27); //De gebruiker die overeen komt met de Gcode van de gebruiker waarop je hebt geklikt.
             string profielnaam = $"{SelectedGebruiker.Voornaam} {SelectedGebruiker.Tussenvoegsel} {SelectedGebruiker.Achternaam}";

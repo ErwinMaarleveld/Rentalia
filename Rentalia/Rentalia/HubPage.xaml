@@ -59,7 +59,7 @@
             <Frame BackgroundColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Grid.Row="1" Grid.ColumnSpan="5" HeightRequest="700" WidthRequest="700" BorderColor="Black" >
                 <StackLayout>
                     <Label Text="---What's new?---" TextColor="Black" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" />
-                    <ListView x:Name="stackView" HasUnevenRows="true" BackgroundColor="OrangeRed">
+                    <ListView x:Name="stackView" HasUnevenRows="true" BackgroundColor="OrangeRed" ItemTapped="OnClickRequestPage">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>

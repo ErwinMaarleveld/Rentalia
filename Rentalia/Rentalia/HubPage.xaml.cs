@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using Rentalia.FieldCheckerMethod;
 using Rentalia.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Rentalia.FourMistakesAPIClient;
 
 namespace Rentalia
 {
@@ -17,8 +17,9 @@ namespace Rentalia
 		{
             BindingContext = this;
 			InitializeComponent ();
-            Aanbieding[] hubAanbiedingen = new Aanbieding[] { new Aanbieding("veld", "Grasmaaier HUREN", "Goede grasmaair, zgan", 69, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0)), new Aanbieding("veld", "Opblaas zwembadje", "Goede grasmaair, zgan", 35, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0)), new Aanbieding("veld", "Tesla model X", "Goede grasmaair, zgan", 420, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0)) };
-            stackView.ItemsSource = hubAanbiedingen;
+            //Aanbieding[] hubAanbiedingen = new Aanbieding[] { new Aanbieding("veld", "Grasmaaier HUREN", "Goede grasmaair, zgan", 69, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0)), new Aanbieding("veld", "Opblaas zwembadje", "Goede grasmaair, zgan", 35, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0)), new Aanbieding("veld", "Tesla model X", "Goede grasmaair, zgan", 420, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0)) };
+            AanbiedingClient client = new AanbiedingClient();
+            stackView.ItemsSource = client.Get().ToList().GetRange(0, 3).ToArray();
         }
 
         public void OnClickMailBox(object sender, EventArgs e)
@@ -28,7 +29,7 @@ namespace Rentalia
 
         public void OnCLickUserPage(object sender, EventArgs e)
         {
-            Gebruiker gebruikert = (Gebruiker)Xamarin.Forms.Application.Current.Properties["LoggedIn"];
+            Gebruiker gebruikert = (Gebruiker)Xamarin.Forms.Application.Current.Properties["loggedIn"];
             App.Current.MainPage = new UserPage(gebruikert.GCode);
         }
 
@@ -45,6 +46,11 @@ namespace Rentalia
         private void OnClickAddOffer(object sender, EventArgs e)
         {
             App.Current.MainPage = new AddOffer();
+        }
+
+        private void OnClickRequestPage(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new RequestPage();
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Rentalia.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Rentalia.FourMistakesAPIClient;
 
 namespace Rentalia
 {
@@ -17,8 +18,10 @@ namespace Rentalia
 		{
             BindingContext = this;
 			InitializeComponent ();
-            Aanbieding[] currentAanbieding = new Aanbieding[] { new Aanbieding("testAanbieding", "Grasmaaier HUREN", "Goede grasmaair, JeWeetToch", 69, DateTime.Now, new Gebruiker("0001", "Bert", "van", "Torens", "bert@appel.nl", DateTime.Now, 0, 0)) };
-            stackView.ItemsSource = currentAanbieding;
+            //Aanbieding[] currentAanbieding = new Aanbieding[] { new Aanbieding("testAanbieding", "Grasmaaier HUREN", "Goede grasmaair, JeWeetToch", 69, DateTime.Now, new Gebruiker("0001", "Bert", "van", "Torens", "bert@appel.nl", DateTime.Now, 0, 0)) };
+            AanbiedingClient client = new AanbiedingClient();
+            Aanbieding[] aanbiedingen = new Aanbieding[] { client.Get("a00001") };
+            stackView.ItemsSource = aanbiedingen;
         }
         public void OnClickMailBox()
         {
