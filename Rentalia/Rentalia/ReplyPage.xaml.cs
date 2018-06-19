@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Rentalia.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -28,7 +29,8 @@ namespace Rentalia
         }
         public void OnClickUserPage()
         {
-            App.Current.MainPage = new UserPage();
+            Gebruiker ingelogdeGebruiker = (Gebruiker)Xamarin.Forms.Application.Current.Properties["LoggedIn"];
+            App.Current.MainPage = new UserPage(ingelogdeGebruiker.GCode);
         }
         public void OnClickHubPage()
         {
