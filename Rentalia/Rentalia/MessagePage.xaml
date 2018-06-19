@@ -53,7 +53,27 @@
             </Image>
 
             <Frame BackgroundColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Grid.Row="1" Grid.ColumnSpan="5" HeightRequest="700" WidthRequest="700" BorderColor="Black" >
-
+                <StackLayout Padding="0,20,0,0">
+                    <Label Text="---Alle aanbiedingen---" TextColor="Black" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <ListView x:Name="stackView" HasUnevenRows="true" BackgroundColor="OrangeRed" ItemTapped="OnClickMessage">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Vertical">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding Verzender.Voornaam}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
+                                            <Label Text="{Binding Verzender.Tussenvoegsel}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
+                                            <Label Text="{Binding Verzender.Achternaam}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
+                                        </StackLayout>
+                                        
+                                        <Label Text="{Binding Onderwerp.Titel}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
+                                        <Label Text="{Binding Datumtijd}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
             </Frame>
 
         </Grid>

@@ -36,10 +36,10 @@
     <EmbeddedResource Update="HubPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MessageLayout.xaml">
+    <EmbeddedResource Update="MessagePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MessagePage.xaml">
+    <EmbeddedResource Update="MessageView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="OfferPage.xaml">

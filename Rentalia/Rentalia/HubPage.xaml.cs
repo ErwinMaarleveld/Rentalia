@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 //using Rentalia.FieldCheckerMethod;
+using Rentalia.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,8 +15,11 @@ namespace Rentalia
 	{
 		public HubPage ()
 		{
+            BindingContext = this;
 			InitializeComponent ();
-		}
+            Aanbieding[] hubAanbiedingen = new Aanbieding[] { new Aanbieding("veld", "Grasmaaier HUREN", "Goede grasmaair, zgan", 69, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0)), new Aanbieding("veld", "Opblaas zwembadje", "Goede grasmaair, zgan", 35, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0)), new Aanbieding("veld", "Tesla model X", "Goede grasmaair, zgan", 420, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0)) };
+            stackView.ItemsSource = hubAanbiedingen;
+        }
 
         public void OnClickMailBox(object sender, EventArgs e)
         {
