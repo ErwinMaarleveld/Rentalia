@@ -17,7 +17,7 @@ namespace Rentalia.FourMistakesAPIClient
 
         public BerichtClient()
         {
-            Url = "http://192.168.56.102:80/api/bericht/";
+            Url = "http://fourmistakesapi.azurewebsites.net/api/bericht/";
             Client = new HttpClient();
             Client.DefaultRequestHeaders.Accept.Clear();
             Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
