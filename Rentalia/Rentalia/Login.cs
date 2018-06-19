@@ -19,7 +19,7 @@ namespace Rentalia
                 try
                 {
                     Gebruiker gebruiker = client.Get(email);
-                    if (gebruiker.Wachtwoord == pass)
+                    if (gebruiker != null && gebruiker.Wachtwoord == pass)
                     {
                         Xamarin.Forms.Application.Current.Properties["loggedIn"] = gebruiker;
                         return true;

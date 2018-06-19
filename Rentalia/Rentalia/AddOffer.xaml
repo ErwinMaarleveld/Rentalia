@@ -85,7 +85,7 @@
                             Scale="1.5"
                             TranslationY="120"
                             TextColor="Black"/>
-
+<!--
                 <Button Text="Voeg plaatje toe"
                         FontSize="Small"
                         Clicked="OnUpload"
@@ -94,7 +94,7 @@
                         Scale="1.5"
                         TranslationY="150"
                         BorderWidth="1"/>
-                
+ -->               
                 <Button Text="Voeg offer toe"
                         FontSize="Small"
                         Clicked="OnClickPlaceOffer"
