@@ -37,7 +37,7 @@
             <!--profile icon-->
             <Image Source="userIcon.png" WidthRequest="40" HeightRequest="40" TranslationY="3" Grid.Row="0"  Grid.Column="2" >
                 <Image.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnClickUserPage()" NumberOfTapsRequired="1" />
+                    <TapGestureRecognizer Tapped="OnClickUserPage" NumberOfTapsRequired="1" />
                 </Image.GestureRecognizers>
             </Image>
 
