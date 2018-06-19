@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Rentalia.Data;
 using Xamarin.Forms;
+using Rentalia.FourMistakesAPIClient;
 
 
 namespace Rentalia
@@ -12,10 +13,19 @@ namespace Rentalia
         public bool CheckCredentials(string email, string pass)
         {
             var a = new FieldCheckerMethod();
-            if (/*HET OVEREENKOMENDE EMAIL ADRES UIT DATABASE, GEBASEERD OP PASS*//*HET OVEREENKOMENDE PASS ADRES UIT DATABASE, GEBASEERD OP EMAIL*/a.IsFilled(email) && a.IsFilled(pass)) 
+            var client = new GebruikerClient();
+            if (a.IsFilled(email) && a.IsFilled(pass))
             {
-                Xamarin.Forms.Application.Current.Properties ["loggedIn"] = new Gebruiker("Allon", "Allon", "Allon", "Allon", email, DateTime.Now, 0, 0, pass);
-                return true;
+                Gebruiker gebruiker = client.Get(email);
+                if (gebruiker.Wachtwoord == pass)
+                {
+                    Application.Current.Properties["loggedIn"] = gebruiker;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
