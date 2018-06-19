@@ -25,9 +25,16 @@ namespace Rentalia.FourMistakesAPIClient
 
         public Gebruiker Get(string code)
         {
-            string content = Client.GetStringAsync(Url + $"/{code}").Result;
-            JObject json = JObject.Parse(content);
-            return json.ToObject<Gebruiker>();
+            try
+            {
+                string content = Client.GetStringAsync(Url + $"/{code}").Result;
+                JObject json = JObject.Parse(content);
+                return json.ToObject<Gebruiker>();
+            }
+            catch (AggregateException)
+            {
+                return null;
+            }
         }
 
         public bool Post(Gebruiker gebruiker)

@@ -68,11 +68,14 @@
                                         <Label Text="{Binding Datumtijd}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
                                         <Label Text="{Binding Onderwerp.Titel}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
                                         <Label Text="{Binding BerichtText}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
+                                        
                                     </StackLayout>
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
+                    <Button Text="Terug naar inbox" TextColor="Black" FontSize="Large" BackgroundColor="OrangeRed" Clicked="OnClickMailBox" />
+                    <Button Text="Reageer" TextColor="Black" FontSize="Large" BackgroundColor="OrangeRed" Clicked="OnClickReply" />
                 </StackLayout>
             </Frame>
 
