@@ -8,16 +8,20 @@ using Plugin.FilePicker.Abstractions;
 using Rentalia.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Rentalia.FourMistakesAPIClient;
 
 namespace Rentalia
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class UserPage : ContentPage
 	{
-		public UserPage ()
+		public UserPage (string gCode)
 		{
 			InitializeComponent ();
-            Gebruiker SelectedGebruiker = new Gebruiker("G0001", "Handige", "", "Harry", "handigehardeharry@gmail.com", DateTime.Now, 4.3423f, 27); //De gebruiker die overeen komt met de Gcode van de gebruiker waarop je hebt geklikt.
+            var client = new GebruikerClient();
+            Gebruiker ingelogdeGeruiker = (Gebruiker)Xamarin.Forms.Application.Current.Properties["LoggedIn"];
+            Gebruiker SelectedGebruiker = client.Get(ingelogdeGeruiker.GCode);
+                //new Gebruiker("G0001", "Handige", "", "Harry", "handigehardeharry@gmail.com", DateTime.Now, 4.3423f, 27); //De gebruiker die overeen komt met de Gcode van de gebruiker waarop je hebt geklikt.
             string profielnaam = $"{SelectedGebruiker.Voornaam} {SelectedGebruiker.Tussenvoegsel} {SelectedGebruiker.Achternaam}";
             string profielsinds = SelectedGebruiker.LidGeworden.Year.ToString();
             //string profielfoto = Path naar profiel foto in database
@@ -31,7 +35,8 @@ namespace Rentalia
 
         public void OnCLickUserPage(object sender, EventArgs e)
         {
-            App.Current.MainPage = new UserPage();
+            Gebruiker gebruikert = (Gebruiker)Xamarin.Forms.Application.Current.Properties["LoggedIn"];
+            App.Current.MainPage = new UserPage(gebruikert.GCode);
         }
 
         public void OnCLickHubPage(object sender, EventArgs e)
