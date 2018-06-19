@@ -13,7 +13,8 @@ namespace Rentalia
 		public App ()
 		{
 			InitializeComponent();
-
+            var client = new GebruikerClient();
+            var gebruiker = client.Get("dsaf@blda.nl");
 			MainPage = new MainPage();
 		}
 

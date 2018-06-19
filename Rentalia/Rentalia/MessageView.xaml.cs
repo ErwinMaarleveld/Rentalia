@@ -43,5 +43,10 @@ namespace Rentalia
         {
             App.Current.MainPage = new AddOffer();
         }
+
+        public void OnClickReply()
+        {
+            App.Current.MainPage = new ReplyPage();
+        }
     }
 }
