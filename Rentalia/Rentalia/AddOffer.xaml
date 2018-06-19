@@ -88,7 +88,7 @@
 
                 <Button Text="Voeg plaatje toe"
                         FontSize="Small"
-                        
+                        Clicked="OnUpload"
                         BackgroundColor="OrangeRed"
                         BorderColor="Black"
                         Scale="1.5"
