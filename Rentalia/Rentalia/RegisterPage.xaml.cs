@@ -25,10 +25,9 @@ namespace Rentalia
         public void OnClickHub(object sender, EventArgs e)
         {
             var a = new FieldCheckerMethod();
-            a.AddGebruiker(voornaam.ToString(), tussen.ToString(), achternaam.ToString(), email.ToString(), pass1.ToString(), pass2.ToString());
-
             if (a.IsFilled(email.Text) && a.IsFilled(voornaam.Text) && a.IsFilled(achternaam.Text) && a.IsFilled(pass1.Text) && a.PassEqual(pass1.Text, pass2.Text) && a.IsValidEmail(email.Text))
             {
+                a.AddGebruiker(voornaam.ToString(), tussen.ToString(), achternaam.ToString(), email.ToString(), pass1.ToString(), pass2.ToString());
                 App.Current.MainPage = new HubPage();
             }
             if(!a.IsValidEmail(email.Text))
