@@ -16,13 +16,20 @@ namespace Rentalia
             var client = new GebruikerClient();
             if (a.IsFilled(email) && a.IsFilled(pass))
             {
-                Gebruiker gebruiker = client.Get(email);
-                if (gebruiker.Wachtwoord == pass)
+                try
                 {
-                    Xamarin.Forms.Application.Current.Properties["loggedIn"] = gebruiker;
-                    return true;
+                    Gebruiker gebruiker = client.Get(email);
+                    if (gebruiker.Wachtwoord == pass)
+                    {
+                        Xamarin.Forms.Application.Current.Properties["loggedIn"] = gebruiker;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
-                else
+                catch (AggregateException)
                 {
                     return false;
                 }
