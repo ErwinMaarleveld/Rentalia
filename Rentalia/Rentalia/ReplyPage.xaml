@@ -57,7 +57,7 @@
                 <Label Text="---Bericht---" TextColor="Black" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" />
                 <Editor BackgroundColor="OrangeRed" HeightRequest="300" />
                     <StackLayout Orientation="Horizontal">
-                        <Button Text="Verstuur bericht" WidthRequest="197" TextColor="Black" FontSize="Large" BackgroundColor="OrangeRed" Clicked="OnClickMailBox" />
+                        <Button Text="Verstuur bericht" WidthRequest="197" TextColor="Black" FontSize="Large" BackgroundColor="OrangeRed" Clicked="OnClickSend" />
                         <Button Text="Cancel bericht" WidthRequest="197" TextColor="Black" FontSize="Large" BackgroundColor="OrangeRed" Clicked="OnClickMailBox" />
                     </StackLayout>
                 </StackLayout>
