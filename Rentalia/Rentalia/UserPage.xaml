@@ -57,15 +57,15 @@
                 <Frame BackgroundColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Grid.Row="1" Grid.ColumnSpan="5" HeightRequest="700" WidthRequest="700" BorderColor="Black" >
                     <StackLayout Padding="0,20,0,0">
                         <Label Text="---Info Gebruiker---" TextColor="Black" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" />
-                        <ListView x:Name="stackView" HasUnevenRows="true" BackgroundColor="OrangeRed" ItemTapped="OnClickMessage">
+                        <ListView x:Name="stackView" HasUnevenRows="true" BackgroundColor="OrangeRed">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
                                         <StackLayout Orientation="Vertical">
                                             <StackLayout Orientation="Horizontal">
-                                                <Label Text="{Binding Verzender.Voornaam}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
-                                                <Label Text="{Binding Verzender.Tussenvoegsel}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
-                                                <Label Text="{Binding Verzender.Achternaam}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
+                                                <Label Text="{Binding Voornaam}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
+                                                <Label Text="{Binding Tussenvoegsel}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
+                                                <Label Text="{Binding Achternaam}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
                                             </StackLayout>
                                             <StackLayout Orientation="Horizontal">
                                                 <Label Text="Lid geworden op:" TextColor="Black" BackgroundColor="Transparent" Font="18" />
