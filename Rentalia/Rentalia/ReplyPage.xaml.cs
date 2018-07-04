@@ -13,9 +13,14 @@ namespace Rentalia
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ReplyPage : ContentPage
 	{
-		public ReplyPage ()
+        private Gebruiker Ontvanger;
+        private Aanbieding Onderwerp;
+
+		public ReplyPage (Gebruiker ontvanger, Aanbieding onderwerp)
 		{
             BindingContext = this;
+            Ontvanger = ontvanger;
+            Onderwerp = onderwerp;
 			InitializeComponent ();
 		}
 
@@ -44,7 +49,9 @@ namespace Rentalia
 
         private void OnClickSend(object sender, EventArgs e)
         {
-
+            FieldCheckerMethod a = new FieldCheckerMethod();
+            a.AddBericht(replyText.Text, Onderwerp, Ontvanger);
+            App.Current.MainPage = new MessagePage();
         }
     }
 }

@@ -50,7 +50,7 @@ namespace Rentalia
 
         private void OnClickRequestPage(object sender, ItemTappedEventArgs e)
         {
-            App.Current.MainPage = new RequestPage((Aanbieding)e.Group);
+            App.Current.MainPage = new RequestPage((Aanbieding)e.Item);
         }
     }
 }

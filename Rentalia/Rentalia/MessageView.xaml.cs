@@ -14,14 +14,16 @@ namespace Rentalia
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MessageView : ContentPage
 	{
-		public MessageView ()
+        private Bericht CurrentBericht;
+
+		public MessageView (Bericht bericht)
 		{
             BindingContext = this;
 			InitializeComponent ();
-            BerichtClient client = new BerichtClient();
+            CurrentBericht = bericht;
             var a = (Gebruiker)Xamarin.Forms.Application.Current.Properties["loggedIn"];
-            Bericht[] bericht = new Bericht[] { client.Get(a.GCode)[0] };
-            stackView.ItemsSource = bericht;
+            Bericht[] berichten = new Bericht[] { CurrentBericht };
+            stackView.ItemsSource = berichten;
         }
 
         public void OnClickMailBox()
@@ -47,9 +49,9 @@ namespace Rentalia
             App.Current.MainPage = new AddOffer();
         }
 
-        public void OnClickReply()
+        public void OnClickReply(object sender, EventArgs e)
         {
-            App.Current.MainPage = new ReplyPage();
+            App.Current.MainPage = new ReplyPage(CurrentBericht.Verzender, CurrentBericht.Onderwerp);
         }
     }
 }
