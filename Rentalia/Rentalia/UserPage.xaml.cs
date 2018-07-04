@@ -13,19 +13,12 @@ using Rentalia.FourMistakesAPIClient;
 namespace Rentalia
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class UserPage : ContentPage
+	public partial class AnotherUserPage : ContentPage
 	{
-		public UserPage (string gCode)
+		public AnotherUserPage (string gCode)
 		{
 			InitializeComponent ();
-            var client = new GebruikerClient();
-            Gebruiker ingelogdeGeruiker = (Gebruiker)Xamarin.Forms.Application.Current.Properties["loggedIn"];
-            Gebruiker SelectedGebruiker = client.Get(ingelogdeGeruiker.GCode);
-                //new Gebruiker("G0001", "Handige", "", "Harry", "handigehardeharry@gmail.com", DateTime.Now, 4.3423f, 27); //De gebruiker die overeen komt met de Gcode van de gebruiker waarop je hebt geklikt.
-            string profielnaam = $"{SelectedGebruiker.Voornaam} {SelectedGebruiker.Tussenvoegsel} {SelectedGebruiker.Achternaam}";
-            string profielsinds = SelectedGebruiker.LidGeworden.Year.ToString();
-            //string profielfoto = Path naar profiel foto in database
-
+            stackView.ItemsSource = new Gebruiker[] { (Gebruiker)Xamarin.Forms.Application.Current.Properties["loggedIn"] };
         }
 
         public void OnClickMailBox(object sender, EventArgs e)
@@ -36,7 +29,7 @@ namespace Rentalia
         public void OnCLickUserPage(object sender, EventArgs e)
         {
             Gebruiker gebruikert = (Gebruiker)Xamarin.Forms.Application.Current.Properties["loggedIn"];
-            App.Current.MainPage = new UserPage(gebruikert.GCode);
+            App.Current.MainPage = new AnotherUserPage(gebruikert.GCode);
         }
 
         public void OnCLickHubPage(object sender, EventArgs e)
