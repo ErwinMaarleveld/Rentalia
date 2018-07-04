@@ -36,7 +36,7 @@ namespace Rentalia
 
         public void OnClickUserPage()
         {
-            App.Current.MainPage = new UserPage(Current.Gebruiker.GCode);
+            App.Current.MainPage = new UserPage(Current.Gebruiker);
         }
 
         public void OnClickHubPage()
@@ -51,8 +51,7 @@ namespace Rentalia
 
         public void OnClickSentRequest()
         {
-            DisplayAlert("Alert", "Het verzoek is ingediend.", "Oke");
-            App.Current.MainPage = new OfferPage();
+            App.Current.MainPage = new ReplyPage(Current.Gebruiker, Current, this);
         }
 
     }

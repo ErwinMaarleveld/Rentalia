@@ -15,12 +15,14 @@ namespace Rentalia
 	{
         private Gebruiker Ontvanger;
         private Aanbieding Onderwerp;
+        private ContentPage From;
 
-		public ReplyPage (Gebruiker ontvanger, Aanbieding onderwerp)
+		public ReplyPage (Gebruiker ontvanger, Aanbieding onderwerp, ContentPage fromm)
 		{
             BindingContext = this;
             Ontvanger = ontvanger;
             Onderwerp = onderwerp;
+            From = fromm;
 			InitializeComponent ();
 		}
 
@@ -34,8 +36,7 @@ namespace Rentalia
         }
         public void OnClickUserPage()
         {
-            Gebruiker ingelodgeGebruiker = (Gebruiker)Xamarin.Forms.Application.Current.Properties["loggedIn"];
-            App.Current.MainPage = new UserPage(ingelodgeGebruiker.GCode);
+            App.Current.MainPage = new UserPage();
         }
         public void OnClickHubPage()
         {
@@ -51,7 +52,7 @@ namespace Rentalia
         {
             FieldCheckerMethod a = new FieldCheckerMethod();
             a.AddBericht(replyText.Text, Onderwerp, Ontvanger);
-            App.Current.MainPage = new MessagePage();
+            App.Current.MainPage = From;
         }
     }
 }

@@ -15,10 +15,19 @@ namespace Rentalia
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class UserPage : ContentPage
 	{
-		public UserPage (string gCode)
+        private Gebruiker Current;
+		public UserPage (Gebruiker current = null)
 		{
 			InitializeComponent ();
-            stackView.ItemsSource = new Gebruiker[] { (Gebruiker)Xamarin.Forms.Application.Current.Properties["loggedIn"] };
+            if (current == null)
+            {
+                Current = (Gebruiker)Xamarin.Forms.Application.Current.Properties["loggedIn"];
+            }
+            else
+            {
+                Current = current;
+            }
+            stackView.ItemsSource = new Gebruiker[] { Current };
         }
 
         public void OnClickMailBox(object sender, EventArgs e)
@@ -28,8 +37,7 @@ namespace Rentalia
 
         public void OnCLickUserPage(object sender, EventArgs e)
         {
-            Gebruiker gebruikert = (Gebruiker)Xamarin.Forms.Application.Current.Properties["loggedIn"];
-            App.Current.MainPage = new UserPage(gebruikert.GCode);
+            App.Current.MainPage = new UserPage();
         }
 
         public void OnCLickHubPage(object sender, EventArgs e)
