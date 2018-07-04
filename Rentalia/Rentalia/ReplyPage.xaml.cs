@@ -29,7 +29,7 @@ namespace Rentalia
         }
         public void OnClickUserPage()
         {
-            Gebruiker ingelodgeGebruiker = (Gebruiker)Xamarin.Forms.Application.Current.Properties["LoggedIn"];
+            Gebruiker ingelodgeGebruiker = (Gebruiker)Xamarin.Forms.Application.Current.Properties["loggedIn"];
             App.Current.MainPage = new UserPage(ingelodgeGebruiker.GCode);
         }
         public void OnClickHubPage()
