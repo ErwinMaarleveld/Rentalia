@@ -55,7 +55,7 @@
                 </Image.GestureRecognizers>
             </Image>
 
-            <Image Source="rLogo.png" BackgroundColor="White" Opacity="0.5" Aspect="Fill" Grid.Row="1" Grid.ColumnSpan="5" HeightRequest="100" />
+            <Image Source="rLogo.png" BackgroundColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Opacity="0.5" Aspect="Fill" Grid.Row="1" Grid.ColumnSpan="5" />
 
             <Frame BackgroundColor="Transparent" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Grid.Row="1" Grid.ColumnSpan="5" HeightRequest="700" WidthRequest="700" BorderColor="Black" >
 
