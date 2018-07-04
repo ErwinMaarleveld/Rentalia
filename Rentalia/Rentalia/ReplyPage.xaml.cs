@@ -29,8 +29,8 @@ namespace Rentalia
         }
         public void OnClickUserPage()
         {
-            Gebruiker ingelodgeGebruiker = (Gebruiker)Xamarin.Forms.Application.Current.Properties["LoggedIn"];
-            App.Current.MainPage = new UserPage(ingelodgeGebruiker.GCode);
+            Gebruiker ingelodgeGebruiker = (Gebruiker)Xamarin.Forms.Application.Current.Properties["loggedIn"];
+            App.Current.MainPage = new AnotherUserPage(ingelodgeGebruiker.GCode);
         }
         public void OnClickHubPage()
         {
@@ -40,6 +40,11 @@ namespace Rentalia
         public void OnClickAddOffer()
         {
             App.Current.MainPage = new AddOffer();
+        }
+
+        private void OnClickSend(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -52,12 +52,14 @@
             </Image.GestureRecognizers>
         </Image>
 
-        <Frame BackgroundColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Grid.Row="1" Grid.ColumnSpan="5" HeightRequest="700" WidthRequest="700" BorderColor="Black" >
+            <Image Source="rLogo.png" BackgroundColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Opacity="0.5" Aspect="Fill" Grid.Row="1" Grid.ColumnSpan="5" />
+
+            <Frame BackgroundColor="Transparent" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Grid.Row="1" Grid.ColumnSpan="5" HeightRequest="700" WidthRequest="700" BorderColor="Black" >
             <StackLayout>
                 <Label Text="---Bericht---" TextColor="Black" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" />
-                <Editor BackgroundColor="OrangeRed" HeightRequest="300" />
+                <Editor BackgroundColor="Transparent" HeightRequest="300" />
                     <StackLayout Orientation="Horizontal">
-                        <Button Text="Verstuur bericht" WidthRequest="197" TextColor="Black" FontSize="Large" BackgroundColor="OrangeRed" Clicked="OnClickMailBox" />
+                        <Button Text="Verstuur bericht" WidthRequest="197" TextColor="Black" FontSize="Large" BackgroundColor="OrangeRed" Clicked="OnClickSend" />
                         <Button Text="Cancel bericht" WidthRequest="197" TextColor="Black" FontSize="Large" BackgroundColor="OrangeRed" Clicked="OnClickMailBox" />
                     </StackLayout>
                 </StackLayout>

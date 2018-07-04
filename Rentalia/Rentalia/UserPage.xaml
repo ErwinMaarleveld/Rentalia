@@ -54,8 +54,32 @@
                     </Image.GestureRecognizers>
                 </Image>
 
-                <Frame BackgroundColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Grid.Row="1" Grid.ColumnSpan="5" HeightRequest="700" WidthRequest="700" BorderColor="Black" >
+                <Image Source="rLogo.png" BackgroundColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Opacity="0.5" Aspect="Fill" Grid.Row="1" Grid.ColumnSpan="5" />
 
+                <Frame BackgroundColor="Transparent" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Grid.Row="1" Grid.ColumnSpan="5" HeightRequest="700" WidthRequest="700" BorderColor="Black" >
+                    <StackLayout Padding="0,20,0,0">
+                        <Label Text="---Info Gebruiker---" TextColor="Black" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" />
+                        <ListView x:Name="stackView" HasUnevenRows="true" BackgroundColor="Transparent">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Vertical">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding Voornaam}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
+                                                <Label Text="{Binding Tussenvoegsel}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
+                                                <Label Text="{Binding Achternaam}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Lid geworden op:" TextColor="Black" BackgroundColor="Transparent" Font="18" />
+                                                <Label Text="{Binding LidGeworden}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
+                                            </StackLayout>
+                                            
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
                 </Frame>
 
             </Grid>

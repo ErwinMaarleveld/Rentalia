@@ -29,8 +29,8 @@ namespace Rentalia
         
         public void OnClickUserPage(object sender, EventArgs e)
         {
-            Gebruiker gebruikert = (Gebruiker)Xamarin.Forms.Application.Current.Properties["LoggedIn"];
-            App.Current.MainPage = new UserPage(gebruikert.GCode);
+            Gebruiker gebruikert = (Gebruiker)Xamarin.Forms.Application.Current.Properties["loggedIn"];
+            App.Current.MainPage = new AnotherUserPage(gebruikert.GCode);
         }
 
         public void OnClickHubPage(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace Rentalia
             var c = new FieldCheckerMethod();
             if (c.IsFilled(price.Text) && c.IsFilled(title.Text) && c.IsFilled(desc.Text))
             {
-                c.AddAanbieding(title.ToString(), desc.ToString(), float.Parse(price.Text), (Gebruiker)Application.Current.Properties["loggedIn"]);
+                c.AddAanbieding(title.Text, desc.Text, float.Parse(price.Text), (Gebruiker)Application.Current.Properties["loggedIn"]);
                 App.Current.MainPage = new OfferPage();
             }
             else
