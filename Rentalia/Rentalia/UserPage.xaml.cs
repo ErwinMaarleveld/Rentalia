@@ -13,9 +13,9 @@ using Rentalia.FourMistakesAPIClient;
 namespace Rentalia
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class AnotherUserPage : ContentPage
+	public partial class UserPage : ContentPage
 	{
-		public AnotherUserPage (string gCode)
+		public UserPage (string gCode)
 		{
 			InitializeComponent ();
             stackView.ItemsSource = new Gebruiker[] { (Gebruiker)Xamarin.Forms.Application.Current.Properties["loggedIn"] };
@@ -29,7 +29,7 @@ namespace Rentalia
         public void OnCLickUserPage(object sender, EventArgs e)
         {
             Gebruiker gebruikert = (Gebruiker)Xamarin.Forms.Application.Current.Properties["loggedIn"];
-            App.Current.MainPage = new AnotherUserPage(gebruikert.GCode);
+            App.Current.MainPage = new UserPage(gebruikert.GCode);
         }
 
         public void OnCLickHubPage(object sender, EventArgs e)
