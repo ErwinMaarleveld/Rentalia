@@ -67,12 +67,6 @@
                                         <StackLayout Orientation="Horizontal">
                                             <Label Text="Te huur: " TextColor="Black" BackgroundColor="Transparent" Font="18" />
                                             <Label Text="{Binding Titel}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
-
-                                        </StackLayout>
-                                        <StackLayout Orientation="Horizontal">
-                                            <Label Text="{Binding Huurprijs}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
-                                            <Label Text="euro per dag." TextColor="Black" BackgroundColor="Transparent" Font="18" />
-                                            <Image Source="{Binding Fotos[0].Bestandsnaam}" HeightRequest="30" WidthRequest="50" HorizontalOptions="EndAndExpand" />
                                         </StackLayout>
                                     </StackLayout>
                                 </ViewCell>
@@ -81,10 +75,6 @@
                     </ListView>
                 </StackLayout>
             </Frame>
-
-
-
-
         </Grid>
 
     </ContentPage.Content>
