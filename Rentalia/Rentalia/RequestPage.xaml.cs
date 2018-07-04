@@ -14,13 +14,13 @@ namespace Rentalia
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RequestPage : ContentPage
     {
-		public RequestPage ()
+		public RequestPage (Aanbieding Huidig)
 		{
             BindingContext = this;
 			InitializeComponent ();
             //Aanbieding[] currentAanbieding = new Aanbieding[] { new Aanbieding("testAanbieding", "Grasmaaier HUREN", "Goede grasmaair, JeWeetToch", 69, DateTime.Now, new Gebruiker("0001", "Bert", "van", "Torens", "bert@appel.nl", DateTime.Now, 0, 0)) };
             AanbiedingClient client = new AanbiedingClient();
-            Aanbieding[] aanbiedingen = new Aanbieding[] { client.Get("a00001") };
+            Aanbieding[] aanbiedingen = new Aanbieding[] { client.Get(Huidig.ACode) };
             stackView.ItemsSource = aanbiedingen;
         }
         public void OnClickMailBox()
@@ -36,7 +36,7 @@ namespace Rentalia
         public void OnClickUserPage()
         {
             Gebruiker gebruikert = (Gebruiker)Xamarin.Forms.Application.Current.Properties["loggedIn"];
-            App.Current.MainPage = new AnotherUserPage(gebruikert.GCode);
+            App.Current.MainPage = new UserPage(gebruikert.GCode);
         }
 
         public void OnClickHubPage()
