@@ -14,13 +14,13 @@ namespace Rentalia
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RequestPage : ContentPage
     {
-		public RequestPage ()
+		public RequestPage (string aCode)
 		{
             BindingContext = this;
 			InitializeComponent ();
             //Aanbieding[] currentAanbieding = new Aanbieding[] { new Aanbieding("testAanbieding", "Grasmaaier HUREN", "Goede grasmaair, JeWeetToch", 69, DateTime.Now, new Gebruiker("0001", "Bert", "van", "Torens", "bert@appel.nl", DateTime.Now, 0, 0)) };
             AanbiedingClient client = new AanbiedingClient();
-            Aanbieding[] aanbiedingen = new Aanbieding[] { client.Get("a00001") };
+            Aanbieding[] aanbiedingen = new Aanbieding[] { client.Get(aCode) };
             stackView.ItemsSource = aanbiedingen;
         }
         public void OnClickMailBox()
