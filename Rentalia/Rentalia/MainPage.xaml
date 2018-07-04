@@ -44,7 +44,7 @@
                    Grid.Column="2"
                    x:Name="pass"/>
             <Button Text="Sign-in"
-                    FontSize="Small"
+                    FontSize="Default"
                     Clicked="OnClickHub"
                     BackgroundColor="OrangeRed"
                     BorderColor="Black"
@@ -53,7 +53,7 @@
                     Grid.Column="2"
                     BorderWidth="1"/>
             <Button Text="Sign-up"
-                    FontSize="Small"
+                    FontSize="Default"
                     Clicked="OnClickRegister"
                     BackgroundColor="OrangeRed"
                     BorderColor="Black"

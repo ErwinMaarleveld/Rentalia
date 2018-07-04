@@ -19,7 +19,7 @@ namespace Rentalia
 			InitializeComponent ();
             //Aanbieding[] hubAanbiedingen = new Aanbieding[] { new Aanbieding("veld", "Grasmaaier HUREN", "Goede grasmaair, zgan", 69, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0)), new Aanbieding("veld", "Opblaas zwembadje", "Goede grasmaair, zgan", 35, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0)), new Aanbieding("veld", "Tesla model X", "Goede grasmaair, zgan", 420, DateTime.Now, new Gebruiker("veld", "veld", "veld", "veld", "veld", DateTime.Now, 0, 0)) };
             AanbiedingClient client = new AanbiedingClient();
-            stackView.ItemsSource = client.Get().ToList().GetRange(0, 3).ToArray();
+            stackView.ItemsSource = client.Get().ToList().GetRange(0, 12).ToArray();
         }
 
         public void OnClickMailBox(object sender, EventArgs e)

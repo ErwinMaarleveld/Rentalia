@@ -70,6 +70,7 @@
                                             <Label Text="Te huur: " TextColor="Black" BackgroundColor="Transparent" Font="18" />
                                             <Label Text="{Binding Titel}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
                                         </StackLayout>
+                                        <Label Text="" />
                                     </StackLayout>
                                 </ViewCell>
                             </DataTemplate>

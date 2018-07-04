@@ -36,6 +36,11 @@ namespace Rentalia
 
         public void OnClickUserPage()
         {
+            App.Current.MainPage = new UserPage();
+        }
+
+        public void OnClickUserPageOwner()
+        {
             App.Current.MainPage = new UserPage(Current.Gebruiker);
         }
 
