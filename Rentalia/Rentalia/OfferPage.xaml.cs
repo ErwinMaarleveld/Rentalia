@@ -30,14 +30,6 @@ namespace Rentalia
             InitializeComponent();
             AanbiedingClient client = new AanbiedingClient();
             listView.ItemsSource = client.Get();
-
-            Action<object> goToOffer = (object ACode) =>
-            {
-                App.Current.MainPage = new RequestPage(ACode.ToString());
-            };
-
-            //Creates callable command
-            goToSingleOffer = new Command(goToOffer);
         }
 
         void OnImageTapped(object sender, EventArgs args)
@@ -75,9 +67,10 @@ namespace Rentalia
             App.Current.MainPage = new AddOffer();
         }
 
-        private void OnClickRequestPage(object sender, ItemTappedEventArgs e, string ACode)
+        private void OnClickRequestPage(object sender, ItemTappedEventArgs e)
         {
-            App.Current.MainPage = new RequestPage(ACode);
+
+            App.Current.MainPage = new RequestPage((Aanbieding)e.Group);
         }
         
     }
