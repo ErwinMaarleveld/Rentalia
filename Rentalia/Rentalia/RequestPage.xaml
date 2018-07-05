@@ -86,9 +86,9 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
+                    <Button Text="Huurverzoek sturen" TextColor="Black" FontSize="Large" BackgroundColor="OrangeRed" Clicked="OnClickSentRequest" />
                     <Button Text="Naar profiel eigenaar aanbieding" TextColor="Black" FontSize="Large" BackgroundColor="OrangeRed" Clicked="OnClickUserPageOwner" />
                     <Button Text="Terug" TextColor="Black" FontSize="Large" BackgroundColor="OrangeRed" Clicked="OnClickOfferPage" />
-                    <Button Text="Huurverzoek sturen" TextColor="Black" FontSize="Large" BackgroundColor="OrangeRed" Clicked="OnClickSentRequest" />
                 </StackLayout>
             </Frame>
 

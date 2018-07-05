@@ -24,6 +24,12 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
+            <StackLayout TranslationY="-250" Grid.RowSpan="5" Grid.Column="0" Orientation="Horizontal">
+                <Image Source="rLogo.png" />
+            </StackLayout>
+
+            <Label Text="Niet kopen maar huren!" TextColor="White" HorizontalOptions="Fill" WidthRequest="500" BackgroundColor="Transparent" FontSize="20" FontAttributes="Bold" TranslationX="300" TranslationY="-150" Grid.RowSpan="3" />
+
             <Entry FontSize="Small"
                    Placeholder="E-mail"
                    PlaceholderColor="Black"
